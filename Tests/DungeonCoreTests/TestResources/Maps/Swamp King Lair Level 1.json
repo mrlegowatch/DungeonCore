@@ -1,0 +1,2397 @@
+{
+    "id": "swamp-king-lair-level-1",
+    "name": "Lair of the Swamp King (1983): First Level",
+    "copyright": "Copyright 1983, 2026 Brian Arnold. All rights reserved. See CONTENT-NOTICE.md.",
+    "maps": [
+        {
+            "id": "first_level",
+            "name": "First Level",
+            "sections": [
+                { "id": "bracken-folk", "name": "Lair of the Bracken-folk" },
+                { "id": "glubbins", "name": "Lair of the Glubbins" },
+                { "id": "storage", "name": "Storage Rooms" }
+            ],
+            "rooms": [
+                {
+                    "id": "entrance",
+                    "name": "Entrance",
+                    "location": { "x": 13.0, "y": 1.0 },
+                    "size": { "width": 1.0, "height": 7.0 },
+                    "labelLocation": { "x": 11.5, "y": 1.5 },
+                    "readAloud": "The path leads down into the fens where a cave opening can be seen. Atop a hill behind it stands a stone structure ominously, though it looks too difficult to scale the hill from the heavy brush below.",
+                    "gmNotes": "Crocodiles can be seen in the fens, but they avoid the path, trained by the swamp king. Often found (1-2 on d10) in this area are groups (check d4):\n- 1-2 (8) BRACKEN-FOLK (AC6, HD1, hp4, #AT1, D1-6 axe) W/d6gp\n- 3-4 (8) GLUBBINS (AC6, HD1, hp4, #AT3, D1-2/1-2/2-5) W/d6gp",
+                    "occupancy": {
+                        "chance": { "die": "d10", "atMost": 2 },
+                        "table": {
+                            "die": "d4",
+                            "rows": [
+                                {
+                                    "from": 1,
+                                    "to": 2,
+                                    "encounter": {
+                                        "name": "Bracken-folk",
+                                        "count": 8,
+                                        "stats": {
+                                            "armorClass": 6,
+                                            "hitDice": "1",
+                                            "hitPoints": [4],
+                                            "attacks": 1,
+                                            "damage": ["d6"],
+                                            "special": "axe",
+                                            "text": "AC6, HD1, hp4, #AT1, D1-6 axe"
+                                        },
+                                        "carriedEach": {
+                                            "coins": { "gp": "d6" }
+                                        }
+                                    }
+                                },
+                                {
+                                    "from": 3,
+                                    "to": 4,
+                                    "encounter": {
+                                        "name": "Glubbin",
+                                        "count": 8,
+                                        "stats": {
+                                            "armorClass": 6,
+                                            "hitDice": "1",
+                                            "hitPoints": [4],
+                                            "attacks": 3,
+                                            "damage": ["d2", "d2", "d4+1"],
+                                            "text": "AC6, HD1, hp4, #AT3, D1-2/1-2/2-5"
+                                        },
+                                        "carriedEach": {
+                                            "coins": { "gp": "d6" }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "id": "1",
+                    "keyNumber": "1",
+                    "name": "Checkroom",
+                    "location": { "x": 12.0, "y": 8.0 },
+                    "size": { "width": 3.0, "height": 3.0 },
+                    "readAloud": "This 30x30’ room has a door on each wall. A few tables are around the center.",
+                    "gmNotes": "Bone fragments and blood stains can be found around the tables, but there is nothing of value. There is a good (1-3 on d10) chance per turn a group is here.\n- LAIR OF THE BRACKEN-FOLK: Figures on the door show what group of creatures inhabits the east cave\n- LAIR OF THE GLUBBINS: Figures also show which group is staying beyond the west door.\n- STORAGE AREAS: Runes give the answers to what is lying beyond the south door: boxes, rocks, carts, picks, etc.",
+                    "occupancy": {
+                        "chance": { "die": "d10", "atMost": 3, "per": "turn" },
+                        "tableRoomID": "entrance"
+                    }
+                },
+                {
+                    "id": "2",
+                    "keyNumber": "2",
+                    "name": "Guardroom",
+                    "sectionID": "bracken-folk",
+                    "edges": [
+                        { "x": 15.0, "y": 9.0 },
+                        { "x": 16.0, "y": 9.0 },
+                        { "x": 16.0, "y": 8.0 },
+                        { "x": 18.0, "y": 8.0 },
+                        { "x": 18.0, "y": 9.0 },
+                        { "x": 20.0, "y": 9.0 },
+                        { "x": 20.0, "y": 10.0 },
+                        { "x": 18.0, "y": 10.0 },
+                        { "x": 18.0, "y": 11.0 },
+                        { "x": 16.0, "y": 11.0 },
+                        { "x": 16.0, "y": 10.0 },
+                        { "x": 15.0, "y": 10.0 }
+                    ],
+                    "readAloud": "The room has two huge tables on their sides, one to the north, the other to the south.",
+                    "gmNotes": "6 BRACKEN-FOLK guards armed with a spear, an axe, and a shield will viciously attack (AC5, HD1, hp5, #AT1, D1-6). The ones behind the tables are harder to reach. They carry d6 silver pieces.",
+                    "contentTags": ["encounter"],
+                    "encounters": [
+                        {
+                            "name": "Bracken-folk guard",
+                            "count": 6,
+                            "stats": {
+                                "armorClass": 5,
+                                "hitDice": "1",
+                                "hitPoints": [5],
+                                "attacks": 1,
+                                "damage": ["d6"],
+                                "text": "AC5, HD1, hp5, #AT1, D1-6"
+                            },
+                            "carriedEach": {
+                                "coins": { "sp": "d6" }
+                            },
+                            "notes": "Armed with a spear, an axe, and a shield."
+                        }
+                    ]
+                },
+                {
+                    "id": "3",
+                    "keyNumber": "3",
+                    "name": "Preproom",
+                    "sectionID": "bracken-folk",
+                    "location": { "x": 20.0, "y": 8.0 },
+                    "size": { "width": 2.0, "height": 3.0 },
+                    "readAloud": "The room has two huge tables with benches around them.",
+                    "gmNotes": "Two rather dumb BRACKEN-FOLK guard this room, each taking turns resting (AC5, HD1, hp4, #AT1, D1-6). They have d8 silver pieces. Six shields and four spears sit on the tables.",
+                    "contentTags": ["encounter", "treasure"],
+                    "encounters": [
+                        {
+                            "name": "Bracken-folk",
+                            "count": 2,
+                            "stats": {
+                                "armorClass": 5,
+                                "hitDice": "1",
+                                "hitPoints": [4],
+                                "attacks": 1,
+                                "damage": ["d6"],
+                                "text": "AC5, HD1, hp4, #AT1, D1-6"
+                            },
+                            "carriedEach": {
+                                "coins": { "sp": "d8" }
+                            },
+                            "notes": "Each taking turns resting."
+                        }
+                    ],
+                    "treasure": {
+                        "items": [
+                            { "name": "Shield", "quantity": 6 },
+                            { "name": "Spear", "quantity": 4 }
+                        ],
+                        "notes": "On the tables."
+                    }
+                },
+                {
+                    "id": "4",
+                    "keyNumber": "4",
+                    "name": "Quarters",
+                    "sectionID": "bracken-folk",
+                    "edges": [
+                        { "x": 14.0, "y": 3.0 },
+                        { "x": 18.0, "y": 3.0 },
+                        { "x": 18.0, "y": 8.0 },
+                        { "x": 14.0, "y": 8.0 },
+                        { "x": 14.0, "y": 6.0 },
+                        { "x": 15.0, "y": 6.0 },
+                        { "x": 15.0, "y": 5.0 },
+                        { "x": 14.0, "y": 5.0 }
+                    ],
+                    "walls": [
+                        [
+                            { "x": 16.0, "y": 3.0 },
+                            { "x": 16.0, "y": 5.0 }
+                        ],
+                        [
+                            { "x": 16.0, "y": 6.0 },
+                            { "x": 16.0, "y": 8.0 }
+                        ],
+                        [
+                            { "x": 17.0, "y": 5.0 },
+                            { "x": 18.0, "y": 5.0 }
+                        ],
+                        [
+                            { "x": 17.0, "y": 6.0 },
+                            { "x": 18.0, "y": 6.0 }
+                        ]
+                    ],
+                    "readAloud": "The hall opens into four living quarters, each in a corner, 20x20’. Each quarter has dried-leaf beds, stools, and tables with bowls on them.",
+                    "gmNotes": "4 families of two males (HD1, hp5, 4), three females (HD1-1, hp3), and 2 to 3 young live here. Their treasure of 2d8sp and d10gp hides under the larger male’s bed. The bowls contain low-quality food from the fens. Quarter D has a brass key (20gp) behind a rock, which opens the secret door.",
+                    "contentTags": ["encounter", "treasure"],
+                    "encounters": [
+                        {
+                            "name": "Bracken-folk male",
+                            "count": 8,
+                            "stats": {
+                                "hitDice": "1",
+                                "hitPoints": [5, 4],
+                                "text": "HD1, hp5, 4"
+                            },
+                            "notes": "4 families; two males in each."
+                        },
+                        {
+                            "name": "Bracken-folk female",
+                            "count": 12,
+                            "stats": {
+                                "hitDice": "1-1",
+                                "hitPoints": [3],
+                                "text": "HD1-1, hp3"
+                            },
+                            "notes": "Three females in each family."
+                        },
+                        { "name": "Bracken-folk young", "count": "4d2+4", "notes": "2 to 3 young in each family." }
+                    ],
+                    "treasure": {
+                        "coins": { "sp": "2d8", "gp": "d10" },
+                        "notes": "Hides under the larger male's bed."
+                    },
+                    "features": [
+                        {
+                            "id": "4A",
+                            "kind": "area",
+                            "name": "Quarter A",
+                            "location": { "x": 17.0, "y": 7.0 }
+                        },
+                        {
+                            "id": "4B",
+                            "kind": "area",
+                            "name": "Quarter B",
+                            "location": { "x": 17.0, "y": 4.0 }
+                        },
+                        {
+                            "id": "4C",
+                            "kind": "area",
+                            "name": "Quarter C",
+                            "location": { "x": 15.0, "y": 7.0 }
+                        },
+                        {
+                            "id": "4D",
+                            "kind": "area",
+                            "name": "Quarter D",
+                            "location": { "x": 15.0, "y": 4.0 },
+                            "gmNotes": "Quarter D has a brass key (20gp) behind a rock, which opens the secret door.",
+                            "treasure": {
+                                "items": [
+                                    { "name": "Brass key", "value": "20 gp", "keyID": "brass-key" }
+                                ],
+                                "notes": "Behind a rock."
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "5",
+                    "keyNumber": "5",
+                    "name": "Commonroom",
+                    "sectionID": "bracken-folk",
+                    "location": { "x": 19.0, "y": 3.0 },
+                    "size": { "width": 3.0, "height": 4.0 },
+                    "readAloud": "This large chamber has a fireplace at the north end and tables and benches around the sides.",
+                    "gmNotes": "Nine males (hp4), eight females (HD1-1, hp3), and 4 young live here, more or less as the peasantry. The males carry d4gp, and one has an iron key which opens the storeroom. The females carry d6sp. A copper brazier sits in the fireplace, worth 20gp if polished.",
+                    "contentTags": ["encounter", "treasure"],
+                    "encounters": [
+                        {
+                            "name": "Bracken-folk male",
+                            "count": 9,
+                            "stats": {
+                                "hitPoints": [4],
+                                "text": "hp4"
+                            },
+                            "carriedEach": {
+                                "coins": { "gp": "d4" }
+                            },
+                            "carried": {
+                                "items": [
+                                    { "name": "Iron key", "keyID": "storeroom-iron-key", "notes": "Opens the storeroom." }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Bracken-folk female",
+                            "count": 8,
+                            "stats": {
+                                "hitDice": "1-1",
+                                "hitPoints": [3],
+                                "text": "HD1-1, hp3"
+                            },
+                            "carriedEach": {
+                                "coins": { "sp": "d6" }
+                            }
+                        },
+                        { "name": "Bracken-folk young", "count": 4 }
+                    ],
+                    "features": [
+                        {
+                            "id": "5-fireplace",
+                            "kind": "hearth",
+                            "name": "Fireplace",
+                            "location": { "x": 20.5, "y": 3.3 },
+                            "treasure": {
+                                "items": [
+                                    { "name": "Copper brazier", "value": "20 gp", "notes": "If polished." }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "6",
+                    "keyNumber": "6",
+                    "name": "Storeroom",
+                    "sectionID": "bracken-folk",
+                    "edges": [
+                        { "x": 19.0, "y": 7.0 },
+                        { "x": 22.0, "y": 7.0 },
+                        { "x": 22.0, "y": 6.0 },
+                        { "x": 24.0, "y": 6.0 },
+                        { "x": 24.0, "y": 9.0 },
+                        { "x": 22.0, "y": 9.0 },
+                        { "x": 22.0, "y": 8.0 },
+                        { "x": 19.0, "y": 8.0 }
+                    ],
+                    "readAloud": "The 30’ long hall opens into a 20x30 room filled with sacks, boxes, barrels, and piles of food.",
+                    "gmNotes": "None of the food here is worth human consumption. One sack contains a gold stick with holes in it (a holy water sprinkler worth 100gp, if polished). The door has a lock.",
+                    "contentTags": ["treasure"],
+                    "treasure": {
+                        "items": [
+                            {
+                                "name": "Holy water sprinkler",
+                                "value": "100 gp",
+                                "notes": "A gold stick with holes in it, in one sack; worth 100gp if polished."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "7",
+                    "keyNumber": "7",
+                    "name": "Watch Hall",
+                    "sectionID": "bracken-folk",
+                    "edges": [
+                        { "x": 18.0, "y": 10.0 },
+                        { "x": 19.0, "y": 10.0 },
+                        { "x": 19.0, "y": 12.0 },
+                        { "x": 20.0, "y": 12.0 },
+                        { "x": 20.0, "y": 14.0 },
+                        { "x": 18.0, "y": 14.0 }
+                    ],
+                    "readAloud": "There are a bench and piles of trash here.",
+                    "gmNotes": "3 large guards work (AC5, HD1+1, hp6, #AT1, D1-6) with arrows, axes, and purses with 2d6gp each. One has a small silver key (worth 40gp) which opens the southern door, which is locked. [The bottommost southern door is unlocked; the door above it leading to 8 is locked.]",
+                    "contentTags": ["encounter"],
+                    "encounters": [
+                        {
+                            "name": "Bracken-folk large guard",
+                            "count": 3,
+                            "stats": {
+                                "armorClass": 5,
+                                "hitDice": "1+1",
+                                "hitPoints": [6],
+                                "attacks": 1,
+                                "damage": ["d6"],
+                                "text": "AC5, HD1+1, hp6, #AT1, D1-6"
+                            },
+                            "carriedEach": {
+                                "coins": { "gp": "2d6" }
+                            },
+                            "carried": {
+                                "items": [
+                                    {
+                                        "name": "Small silver key",
+                                        "value": "40 gp",
+                                        "keyID": "watch-silver-key",
+                                        "notes": "Opens the locked door into room 8."
+                                    }
+                                ]
+                            },
+                            "notes": "With arrows and axes."
+                        }
+                    ]
+                },
+                {
+                    "id": "8",
+                    "keyNumber": "8",
+                    "name": "Chieftain's Room",
+                    "sectionID": "bracken-folk",
+                    "location": { "x": 20.0, "y": 11.0 },
+                    "size": { "width": 3.0, "height": 2.0 },
+                    "readAloud": "There are heaps of cloth and trash, and bits of battered furniture in this place.",
+                    "gmNotes": "The chief is (AC5, HD2, hp8, #AT1, D2-8 battle axe); he has the two bronze keys (worth 5gp each) which open the portcullises at 9, and a white and green gem on a chain (malachite-100gp). There are 4 tramps here (AC6, HD1-1, hp3, #AT1, D1-3) each with d6gp. A locked chest (no key) holds 175cp, 65sp, 29ep, and 35gp. The chief’s belt is fine ornamented leather (worth 80gp) with eight small 50gp malachite gems hidden inside.",
+                    "contentTags": ["encounter", "treasure"],
+                    "encounters": [
+                        {
+                            "name": "Bracken-folk chief",
+                            "count": 1,
+                            "stats": {
+                                "armorClass": 5,
+                                "hitDice": "2",
+                                "hitPoints": [8],
+                                "attacks": 1,
+                                "damage": ["2d4"],
+                                "special": "battle axe",
+                                "text": "AC5, HD2, hp8, #AT1, D2-8 battle axe"
+                            },
+                            "carried": {
+                                "items": [
+                                    {
+                                        "name": "Bronze key",
+                                        "quantity": 2,
+                                        "value": "5 gp",
+                                        "keyID": "portcullis-bronze-key",
+                                        "notes": "Open the portcullises at 9 (the feeding hatches on the pens)."
+                                    },
+                                    { "name": "Malachite gem on a chain", "value": "100 gp", "notes": "White and green." },
+                                    { "name": "Ornamented leather belt", "value": "80 gp" },
+                                    { "name": "Small malachite gem", "quantity": 8, "value": "50 gp", "notes": "Hidden inside the chief's belt." }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Bracken-folk tramp",
+                            "count": 4,
+                            "stats": {
+                                "armorClass": 6,
+                                "hitDice": "1-1",
+                                "hitPoints": [3],
+                                "attacks": 1,
+                                "damage": ["d3"],
+                                "text": "AC6, HD1-1, hp3, #AT1, D1-3"
+                            },
+                            "carriedEach": {
+                                "coins": { "gp": "d6" }
+                            }
+                        }
+                    ],
+                    "features": [
+                        {
+                            "id": "8-chest",
+                            "kind": "container",
+                            "name": "Locked chest",
+                            "location": { "x": 22.5, "y": 11.5 },
+                            "gmNotes": "A locked chest (no key).",
+                            "treasure": {
+                                "coins": { "cp": 175, "sp": 65, "ep": 29, "gp": 35 }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "9",
+                    "keyNumber": "9",
+                    "name": "Petroom",
+                    "sectionID": "bracken-folk",
+                    "edges": [
+                        { "x": 24.0, "y": 11.0 },
+                        { "x": 25.0, "y": 11.0 },
+                        { "x": 25.0, "y": 13.0 },
+                        { "x": 24.0, "y": 13.0 },
+                        { "x": 24.0, "y": 14.0 },
+                        { "x": 23.0, "y": 14.0 },
+                        { "x": 23.0, "y": 12.0 },
+                        { "x": 24.0, "y": 12.0 }
+                    ],
+                    "readAloud": "The floors are covered with trash and refuse. The walls and ceiling are mucky and tattered with cobwebs, making it difficult to see their ends.",
+                    "gmNotes": "The portcullises open by small levers by the middle secret door. In 9A there are 14 large spiders (AC8, HD1+1, hp5, #AT1, D1, 1-4poison). A gnomish remains holds a Level 1 map; see MAP #1. In 9B there are two young giant wasps (AC7, HD2, hp8, #AT2, D1-4/1-2). A 100gp silver ring hides in the northwest corner, among the trash.",
+                    "features": [
+                        {
+                            "id": "9-levers",
+                            "kind": "lever",
+                            "name": "Small levers",
+                            "location": { "x": 23.3, "y": 12.5 },
+                            "gmNotes": "The portcullises open by small levers by the middle secret door."
+                        }
+                    ]
+                },
+                {
+                    "id": "9A",
+                    "keyNumber": "9A",
+                    "name": "Petroom, north pen",
+                    "sectionID": "bracken-folk",
+                    "location": { "x": 24.0, "y": 9.0 },
+                    "size": { "width": 2.0, "height": 2.0 },
+                    "gmNotes": "In 9A there are 14 large spiders (AC8, HD1+1, hp5, #AT1, D1, 1-4poison). A gnomish remains holds a Level 1 map; see MAP #1.",
+                    "contentTags": ["encounter", "treasure"],
+                    "encounters": [
+                        {
+                            "name": "Large spider",
+                            "count": 14,
+                            "stats": {
+                                "armorClass": 8,
+                                "hitDice": "1+1",
+                                "hitPoints": [5],
+                                "attacks": 1,
+                                "damage": ["1"],
+                                "special": "1-4 poison",
+                                "text": "AC8, HD1+1, hp5, #AT1, D1, 1-4poison"
+                            }
+                        }
+                    ],
+                    "treasure": {
+                        "items": [
+                            { "name": "Gnome's partial sketch of Level 1", "notes": "MAP #1, held by a gnomish remains." }
+                        ]
+                    }
+                },
+                {
+                    "id": "9B",
+                    "keyNumber": "9B",
+                    "name": "Petroom, south pen",
+                    "sectionID": "bracken-folk",
+                    "location": { "x": 22.0, "y": 14.0 },
+                    "size": { "width": 2.0, "height": 2.0 },
+                    "gmNotes": "In 9B there are two young giant wasps (AC7, HD2, hp8, #AT2, D1-4/1-2). A 100gp silver ring hides in the northwest corner, among the trash.",
+                    "contentTags": ["encounter", "treasure"],
+                    "encounters": [
+                        {
+                            "name": "Young giant wasp",
+                            "count": 2,
+                            "stats": {
+                                "armorClass": 7,
+                                "hitDice": "2",
+                                "hitPoints": [8],
+                                "attacks": 2,
+                                "damage": ["d4", "d2"],
+                                "text": "AC7, HD2, hp8, #AT2, D1-4/1-2"
+                            }
+                        }
+                    ],
+                    "treasure": {
+                        "items": [
+                            { "name": "Silver ring", "value": "100 gp" }
+                        ],
+                        "notes": "Hides in the northwest corner, among the trash."
+                    }
+                },
+                {
+                    "id": "10",
+                    "keyNumber": "10",
+                    "name": "Preproom",
+                    "sectionID": "glubbins",
+                    "location": { "x": 8.0, "y": 8.0 },
+                    "size": { "width": 4.0, "height": 3.0 },
+                    "labelLocation": { "x": 10.0, "y": 9.5 },
+                    "readAloud": "Long pools line the north and south edges of the hall, which meets at a door. There is no furniture.",
+                    "gmNotes": "The GLUBBINS wet themselves here every few days as they must for their skin.",
+                    "features": [
+                        {
+                            "id": "10-pool-n",
+                            "kind": "pool",
+                            "name": "North pool",
+                            "location": { "x": 10.0, "y": 8.5 },
+                            "size": { "width": 3.8, "height": 0.8 }
+                        },
+                        {
+                            "id": "10-pool-s",
+                            "kind": "pool",
+                            "name": "South pool",
+                            "location": { "x": 10.0, "y": 10.5 },
+                            "size": { "width": 3.8, "height": 0.8 }
+                        }
+                    ]
+                },
+                {
+                    "id": "11",
+                    "keyNumber": "11",
+                    "name": "Guardroom",
+                    "sectionID": "glubbins",
+                    "location": { "x": 6.0, "y": 3.0 },
+                    "size": { "width": 2.0, "height": 2.0 },
+                    "readAloud": "There is a table and some chairs here.",
+                    "gmNotes": "5 guard GLUBBINS are here (AC6, HD1, hp5, #AT1, D1-6) with d6ep each. One has a horn, which he will use to alert the lair to danger. An old rug hangs on the south wall, which shows a picture. The picture is of their leader and is worth 90gp intact. The table has 3 planks on top of it, used for the pit in 13.",
+                    "contentTags": ["encounter", "treasure"],
+                    "encounters": [
+                        {
+                            "name": "Glubbin guard",
+                            "count": 5,
+                            "stats": {
+                                "armorClass": 6,
+                                "hitDice": "1",
+                                "hitPoints": [5],
+                                "attacks": 1,
+                                "damage": ["d6"],
+                                "text": "AC6, HD1, hp5, #AT1, D1-6"
+                            },
+                            "carriedEach": {
+                                "coins": { "ep": "d6" }
+                            },
+                            "carried": {
+                                "items": [
+                                    { "name": "Horn", "notes": "One has it, and will use it to alert the lair to danger." }
+                                ]
+                            }
+                        }
+                    ],
+                    "features": [
+                        {
+                            "id": "11-rug",
+                            "kind": "decoration",
+                            "name": "Old rug",
+                            "location": { "x": 7.5, "y": 4.8 },
+                            "gmNotes": "An old rug hangs on the south wall, which shows a picture. The picture is of their leader and is worth 90gp intact.",
+                            "treasure": {
+                                "items": [
+                                    { "name": "Old rug", "value": "90 gp", "notes": "Worth 90gp intact." }
+                                ]
+                            }
+                        },
+                        {
+                            "id": "11-table",
+                            "kind": "furnishing",
+                            "name": "Table with planks",
+                            "location": { "x": 7.2, "y": 3.9 },
+                            "gmNotes": "The table has 3 planks on top of it, used for the pit in 13.",
+                            "treasure": {
+                                "items": [
+                                    { "name": "Plank", "quantity": 3 }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "12",
+                    "keyNumber": "12",
+                    "name": "Livingplaces",
+                    "sectionID": "glubbins",
+                    "location": { "x": 4.0, "y": 5.0 },
+                    "size": { "width": 3.0, "height": 3.0 },
+                    "readAloud": "There are heaps of leaves and broken furniture strewn all about this room.",
+                    "gmNotes": "12 has 6 dwarf slaves with 2hp each (0 level), and a fireplace, some tables and benches. 12A-thru-E have each: 3 males (hp4), 3 females (hp3, HD1-1), and one or two young. The males have 4d6sp. 12C also has an old pottery jar with 27gp in it.",
+                    "contentTags": ["encounter"],
+                    "encounters": [
+                        {
+                            "name": "Dwarf slave",
+                            "count": 6,
+                            "stats": {
+                                "hitPoints": [2],
+                                "text": "2hp each (0 level)"
+                            }
+                        }
+                    ],
+                    "features": [
+                        {
+                            "id": "12-fireplace",
+                            "kind": "hearth",
+                            "name": "Fireplace",
+                            "location": { "x": 5.5, "y": 7.7 }
+                        }
+                    ]
+                },
+                {
+                    "id": "12A",
+                    "keyNumber": "12A",
+                    "name": "Livingplace A",
+                    "sectionID": "glubbins",
+                    "location": { "x": 8.0, "y": 4.0 },
+                    "size": { "width": 1.0, "height": 2.0 },
+                    "gmNotes": "12A-thru-E have each: 3 males (hp4), 3 females (hp3, HD1-1), and one or two young. The males have 4d6sp.",
+                    "contentTags": ["encounter"],
+                    "encounters": [
+                        {
+                            "name": "Glubbin male",
+                            "count": 3,
+                            "stats": {
+                                "hitPoints": [4],
+                                "text": "hp4"
+                            },
+                            "carriedEach": {
+                                "coins": { "sp": "4d6" }
+                            }
+                        },
+                        {
+                            "name": "Glubbin female",
+                            "count": 3,
+                            "stats": {
+                                "hitDice": "1-1",
+                                "hitPoints": [3],
+                                "text": "hp3, HD1-1"
+                            }
+                        },
+                        { "name": "Glubbin young", "count": "d2" }
+                    ]
+                },
+                {
+                    "id": "12B",
+                    "keyNumber": "12B",
+                    "name": "Livingplace B",
+                    "sectionID": "glubbins",
+                    "location": { "x": 9.0, "y": 4.0 },
+                    "size": { "width": 1.0, "height": 2.0 },
+                    "gmNotes": "12A-thru-E have each: 3 males (hp4), 3 females (hp3, HD1-1), and one or two young. The males have 4d6sp.",
+                    "contentTags": ["encounter"],
+                    "encounters": [
+                        {
+                            "name": "Glubbin male",
+                            "count": 3,
+                            "stats": {
+                                "hitPoints": [4],
+                                "text": "hp4"
+                            },
+                            "carriedEach": {
+                                "coins": { "sp": "4d6" }
+                            }
+                        },
+                        {
+                            "name": "Glubbin female",
+                            "count": 3,
+                            "stats": {
+                                "hitDice": "1-1",
+                                "hitPoints": [3],
+                                "text": "hp3, HD1-1"
+                            }
+                        },
+                        { "name": "Glubbin young", "count": "d2" }
+                    ]
+                },
+                {
+                    "id": "12C",
+                    "keyNumber": "12C",
+                    "name": "Livingplace C",
+                    "sectionID": "glubbins",
+                    "location": { "x": 10.0, "y": 4.0 },
+                    "size": { "width": 1.0, "height": 2.0 },
+                    "gmNotes": "12A-thru-E have each: 3 males (hp4), 3 females (hp3, HD1-1), and one or two young. The males have 4d6sp. 12C also has an old pottery jar with 27gp in it.",
+                    "contentTags": ["encounter", "treasure"],
+                    "encounters": [
+                        {
+                            "name": "Glubbin male",
+                            "count": 3,
+                            "stats": {
+                                "hitPoints": [4],
+                                "text": "hp4"
+                            },
+                            "carriedEach": {
+                                "coins": { "sp": "4d6" }
+                            }
+                        },
+                        {
+                            "name": "Glubbin female",
+                            "count": 3,
+                            "stats": {
+                                "hitDice": "1-1",
+                                "hitPoints": [3],
+                                "text": "hp3, HD1-1"
+                            }
+                        },
+                        { "name": "Glubbin young", "count": "d2" }
+                    ],
+                    "treasure": {
+                        "coins": { "gp": 27 },
+                        "notes": "In an old pottery jar."
+                    }
+                },
+                {
+                    "id": "12D",
+                    "keyNumber": "12D",
+                    "name": "Livingplace D",
+                    "sectionID": "glubbins",
+                    "location": { "x": 11.0, "y": 4.0 },
+                    "size": { "width": 1.0, "height": 2.0 },
+                    "gmNotes": "12A-thru-E have each: 3 males (hp4), 3 females (hp3, HD1-1), and one or two young. The males have 4d6sp.",
+                    "contentTags": ["encounter"],
+                    "encounters": [
+                        {
+                            "name": "Glubbin male",
+                            "count": 3,
+                            "stats": {
+                                "hitPoints": [4],
+                                "text": "hp4"
+                            },
+                            "carriedEach": {
+                                "coins": { "sp": "4d6" }
+                            }
+                        },
+                        {
+                            "name": "Glubbin female",
+                            "count": 3,
+                            "stats": {
+                                "hitDice": "1-1",
+                                "hitPoints": [3],
+                                "text": "hp3, HD1-1"
+                            }
+                        },
+                        { "name": "Glubbin young", "count": "d2" }
+                    ]
+                },
+                {
+                    "id": "12E",
+                    "keyNumber": "12E",
+                    "name": "Livingplace E",
+                    "sectionID": "glubbins",
+                    "location": { "x": 12.0, "y": 4.0 },
+                    "size": { "width": 1.0, "height": 2.0 },
+                    "gmNotes": "12A-thru-E have each: 3 males (hp4), 3 females (hp3, HD1-1), and one or two young. The males have 4d6sp.",
+                    "contentTags": ["encounter"],
+                    "encounters": [
+                        {
+                            "name": "Glubbin male",
+                            "count": 3,
+                            "stats": {
+                                "hitPoints": [4],
+                                "text": "hp4"
+                            },
+                            "carriedEach": {
+                                "coins": { "sp": "4d6" }
+                            }
+                        },
+                        {
+                            "name": "Glubbin female",
+                            "count": 3,
+                            "stats": {
+                                "hitDice": "1-1",
+                                "hitPoints": [3],
+                                "text": "hp3, HD1-1"
+                            }
+                        },
+                        { "name": "Glubbin young", "count": "d2" }
+                    ]
+                },
+                {
+                    "id": "13",
+                    "keyNumber": "13",
+                    "name": "Foodstore",
+                    "sectionID": "glubbins",
+                    "edges": [
+                        { "x": 7.0, "y": 5.0 },
+                        { "x": 8.0, "y": 5.0 },
+                        { "x": 8.0, "y": 7.0 },
+                        { "x": 10.0, "y": 7.0 },
+                        { "x": 10.0, "y": 6.0 },
+                        { "x": 12.0, "y": 6.0 },
+                        { "x": 12.0, "y": 8.0 },
+                        { "x": 7.0, "y": 8.0 }
+                    ],
+                    "readAloud": "Baskets are scattered around the room.",
+                    "gmNotes": "In the baskets are foodstuffs. 14 centipedes inhabit one (AC9, HD1/4, hp1, #AT1, Dpoison1-4). Under them is a gold ring worth 100gp.",
+                    "contentTags": ["encounter", "treasure"],
+                    "encounters": [
+                        {
+                            "name": "Centipede",
+                            "count": 14,
+                            "stats": {
+                                "armorClass": 9,
+                                "hitDice": "1/4",
+                                "hitPoints": [1],
+                                "attacks": 1,
+                                "damage": ["d4"],
+                                "special": "poison",
+                                "text": "AC9, HD1/4, hp1, #AT1, Dpoison1-4"
+                            },
+                            "notes": "Inhabit one of the baskets."
+                        }
+                    ],
+                    "treasure": {
+                        "items": [
+                            { "name": "Gold ring", "value": "100 gp" }
+                        ],
+                        "notes": "Under the centipedes."
+                    },
+                    "features": [
+                        {
+                            "id": "13-pit",
+                            "kind": "pit",
+                            "name": "Pit",
+                            "location": { "x": 9.5, "y": 7.5 },
+                            "size": { "width": 1.0, "height": 1.0 },
+                            "gmNotes": "Bridged with the 3 planks from the table in 11."
+                        }
+                    ]
+                },
+                {
+                    "id": "14",
+                    "keyNumber": "14",
+                    "name": "Guardroom",
+                    "sectionID": "glubbins",
+                    "location": { "x": 6.0, "y": 14.0 },
+                    "size": { "width": 2.0, "height": 2.0 },
+                    "readAloud": "The room has a desk and some chairs.",
+                    "gmNotes": "4 huge guards are here (AC6, HD1+1, hp6, #AT1, D1-6, 2-8). They use bows, arrows, and battle axes. They have 2d6gp. The door to the south is locked.",
+                    "contentTags": ["encounter"],
+                    "encounters": [
+                        {
+                            "name": "Glubbin huge guard",
+                            "count": 4,
+                            "stats": {
+                                "armorClass": 6,
+                                "hitDice": "1+1",
+                                "hitPoints": [6],
+                                "attacks": 1,
+                                "damage": ["d6", "2d4"],
+                                "special": "bow or battle axe",
+                                "text": "AC6, HD1+1, hp6, #AT1, D1-6, 2-8"
+                            },
+                            "carriedEach": {
+                                "coins": { "gp": "2d6" }
+                            },
+                            "notes": "They use bows, arrows, and battle axes."
+                        }
+                    ]
+                },
+                {
+                    "id": "15",
+                    "keyNumber": "15",
+                    "name": "Leader's Room",
+                    "sectionID": "glubbins",
+                    "location": { "x": 4.0, "y": 11.0 },
+                    "size": { "width": 4.0, "height": 3.0 },
+                    "readAloud": "A large bed is at the west end of the room, a 10x20’ pool is at the northern end, and stools litter the floor.",
+                    "gmNotes": "The leader (AC5, HD2+2, hp15, #AT1, D3-9 battle axe) has 37gp, 5pp, and an amulet on a gold chain (worth 700gp). 3 females also live here (HD1, hp4), carrying 2d4gp.",
+                    "contentTags": ["encounter"],
+                    "encounters": [
+                        {
+                            "name": "Glubbin leader",
+                            "count": 1,
+                            "stats": {
+                                "armorClass": 5,
+                                "hitDice": "2+2",
+                                "hitPoints": [15],
+                                "attacks": 1,
+                                "damage": ["2d4+1"],
+                                "special": "battle axe",
+                                "text": "AC5, HD2+2, hp15, #AT1, D3-9 battle axe"
+                            },
+                            "carried": {
+                                "coins": { "gp": 37, "pp": 5 },
+                                "items": [
+                                    { "name": "Amulet on a gold chain", "value": "700 gp" }
+                                ]
+                            }
+                        },
+                        {
+                            "name": "Glubbin female",
+                            "count": 3,
+                            "stats": {
+                                "hitDice": "1",
+                                "hitPoints": [4],
+                                "text": "HD1, hp4"
+                            },
+                            "carriedEach": {
+                                "coins": { "gp": "2d4" }
+                            }
+                        }
+                    ],
+                    "features": [
+                        {
+                            "id": "15-bed",
+                            "kind": "furnishing",
+                            "name": "Large bed",
+                            "location": { "x": 4.6, "y": 12.5 }
+                        },
+                        {
+                            "id": "15-pool",
+                            "kind": "pool",
+                            "name": "Pool",
+                            "location": { "x": 7.0, "y": 11.5 },
+                            "size": { "width": 1.8, "height": 0.8 }
+                        }
+                    ]
+                },
+                {
+                    "id": "16",
+                    "keyNumber": "16",
+                    "name": "Treasure Trove",
+                    "sectionID": "glubbins",
+                    "edges": [
+                        { "x": 9.0, "y": 11.0 },
+                        { "x": 10.0, "y": 11.0 },
+                        { "x": 10.0, "y": 14.0 },
+                        { "x": 9.0, "y": 14.0 },
+                        { "x": 9.0, "y": 13.0 },
+                        { "x": 8.0, "y": 13.0 },
+                        { "x": 8.0, "y": 12.0 },
+                        { "x": 9.0, "y": 12.0 }
+                    ],
+                    "readAloud": "Shelves line the walls.",
+                    "gmNotes": "A large iron chest rests in the center of the room and contains: 205cp, 286sp, 81gp, and 13pp. Stuck under one shelf is a SCROLL of 6HD SLEEP.",
+                    "contentTags": ["treasure"],
+                    "treasure": {
+                        "items": [
+                            { "name": "SCROLL of 6HD SLEEP", "isMagic": true, "notes": "Stuck under one shelf." }
+                        ]
+                    },
+                    "features": [
+                        {
+                            "id": "16-chest",
+                            "kind": "container",
+                            "name": "Large iron chest",
+                            "location": { "x": 9.5, "y": 12.5 },
+                            "treasure": {
+                                "coins": { "cp": 205, "sp": 286, "gp": 81, "pp": 13 }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "17",
+                    "keyNumber": "17",
+                    "name": "Firsthall",
+                    "sectionID": "storage",
+                    "edges": [
+                        { "x": 12.0, "y": 11.0 },
+                        { "x": 15.0, "y": 11.0 },
+                        { "x": 15.0, "y": 13.0 },
+                        { "x": 16.0, "y": 13.0 },
+                        { "x": 16.0, "y": 11.0 },
+                        { "x": 17.0, "y": 11.0 },
+                        { "x": 17.0, "y": 14.0 },
+                        { "x": 14.0, "y": 14.0 },
+                        { "x": 14.0, "y": 12.0 },
+                        { "x": 13.0, "y": 12.0 },
+                        { "x": 13.0, "y": 14.0 },
+                        { "x": 10.0, "y": 14.0 },
+                        { "x": 10.0, "y": 11.0 },
+                        { "x": 11.0, "y": 11.0 },
+                        { "x": 11.0, "y": 13.0 },
+                        { "x": 12.0, "y": 13.0 }
+                    ],
+                    "readAloud": "There are two large pools blocking passage to doors to the north and to the south.",
+                    "gmNotes": "At 17A, a blue wooden lever is set in the wall. When it is up (as it normally is), the water level is up to 10’, and when it is down, so is the water. At 17B there is a red lever, and when it is up, so are the spikes, and when it is down (as normal), the spikes are too.",
+                    "contentTags": ["trap"],
+                    "features": [
+                        {
+                            "id": "17A",
+                            "kind": "lever",
+                            "name": "Blue wooden lever",
+                            "location": { "x": 10.5, "y": 11.5 },
+                            "gmNotes": "When it is up (as it normally is), the water level is up to 10', and when it is down, so is the water."
+                        },
+                        {
+                            "id": "17B",
+                            "kind": "lever",
+                            "name": "Red lever",
+                            "location": { "x": 16.5, "y": 11.5 },
+                            "gmNotes": "When it is up, so are the spikes, and when it is down (as normal), the spikes are too."
+                        }
+                    ]
+                },
+                {
+                    "id": "17-pools",
+                    "name": "Firsthall, pools",
+                    "sectionID": "storage",
+                    "location": { "x": 10.0, "y": 14.0 },
+                    "size": { "width": 7.0, "height": 2.0 },
+                    "contentTags": ["hazard", "trap"],
+                    "features": [
+                        {
+                            "id": "17-pool-w",
+                            "kind": "pool",
+                            "name": "West pool",
+                            "location": { "x": 12.0, "y": 15.0 },
+                            "size": { "width": 1.8, "height": 1.8 },
+                            "gmNotes": "Water level set by the blue lever at 17A."
+                        },
+                        {
+                            "id": "17-pool-e",
+                            "kind": "pool",
+                            "name": "East pool",
+                            "location": { "x": 15.0, "y": 15.0 },
+                            "size": { "width": 1.8, "height": 1.8 },
+                            "gmNotes": "Water level set by the blue lever at 17A."
+                        },
+                        {
+                            "id": "17-spikes",
+                            "kind": "trap",
+                            "name": "Spikes",
+                            "location": { "x": 13.5, "y": 15.0 },
+                            "size": { "width": 1.0, "height": 2.0 },
+                            "gmNotes": "Raised and lowered by the red lever at 17B."
+                        }
+                    ]
+                },
+                {
+                    "id": "18",
+                    "keyNumber": "18",
+                    "name": "Small Room",
+                    "sectionID": "storage",
+                    "location": { "x": 13.0, "y": 13.0 },
+                    "size": { "width": 1.0, "height": 1.0 },
+                    "readAloud": "There are mops and brooms lining the walls, and buckets fill the floor.",
+                    "gmNotes": "A mop or one of two of the brooms has a diameter (1/4”) small enough to trigger the catch for the secret door. In 18A, there are large keys: A gold (50gp), a silver (30gp), two bronze (15gp), and four iron keys used for the store. ANY IRON KEY OPENS ROOMS 19 thru 22. ALL DOORS ARE LOCKED."
+                },
+                {
+                    "id": "18A",
+                    "keyNumber": "18A",
+                    "name": "Small room, key closet",
+                    "sectionID": "storage",
+                    "location": { "x": 13.0, "y": 12.0 },
+                    "size": { "width": 1.0, "height": 1.0 },
+                    "gmNotes": "In 18A, there are large keys: A gold (50gp), a silver (30gp), two bronze (15gp), and four iron keys used for the store. ANY IRON KEY OPENS ROOMS 19 thru 22. ALL DOORS ARE LOCKED.",
+                    "contentTags": ["treasure"],
+                    "treasure": {
+                        "items": [
+                            { "name": "Large gold key", "value": "50 gp", "keyID": "store-gold-key", "notes": "Opens room 29." },
+                            { "name": "Large silver key", "value": "30 gp", "keyID": "store-silver-key", "notes": "Opens room 24." },
+                            {
+                                "name": "Large bronze key",
+                                "quantity": 2,
+                                "value": "15 gp",
+                                "keyID": "store-bronze-key",
+                                "notes": "A bronze key opens room 23; a bronze key opens room 27."
+                            },
+                            {
+                                "name": "Large iron key",
+                                "quantity": 4,
+                                "keyID": "store-iron-key",
+                                "notes": "Any iron key opens rooms 19 thru 22."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "19",
+                    "keyNumber": "19",
+                    "name": "Storerm#1",
+                    "sectionID": "storage",
+                    "location": { "x": 14.0, "y": 17.0 },
+                    "size": { "width": 2.0, "height": 2.0 },
+                    "readAloud": "Various shovels and piles of rock fill this room.",
+                    "gmNotes": "3 STONEWADERS will throw large rocks (1-2hp) to keep people out, but might attack anyway (AC2, HD1, hp5, #AT2, D2-5/2-5).",
+                    "contentTags": ["encounter"],
+                    "encounters": [
+                        {
+                            "name": "Stonewader",
+                            "count": 3,
+                            "stats": {
+                                "armorClass": 2,
+                                "hitDice": "1",
+                                "hitPoints": [5],
+                                "attacks": 2,
+                                "damage": ["d4+1", "d4+1"],
+                                "text": "AC2, HD1, hp5, #AT2, D2-5/2-5"
+                            },
+                            "notes": "Will throw large rocks (1-2hp) to keep people out."
+                        }
+                    ]
+                },
+                {
+                    "id": "20",
+                    "keyNumber": "20",
+                    "name": "Storerm#2",
+                    "sectionID": "storage",
+                    "location": { "x": 11.0, "y": 17.0 },
+                    "size": { "width": 2.0, "height": 3.0 },
+                    "readAloud": "Piles of rocks and sand leave no floor space in this room.",
+                    "gmNotes": "2 turns’ worth of digging will reveal a small halfling skeleton wielding a +1 LONG SWORD and some rotted items.",
+                    "contentTags": ["treasure"],
+                    "treasure": {
+                        "items": [
+                            {
+                                "name": "+1 LONG SWORD",
+                                "isMagic": true,
+                                "notes": "Wielded by a small halfling skeleton; 2 turns' worth of digging."
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "21",
+                    "keyNumber": "21",
+                    "name": "Storerm#3",
+                    "sectionID": "storage",
+                    "location": { "x": 11.0, "y": 21.0 },
+                    "size": { "width": 2.0, "height": 2.0 },
+                    "readAloud": "In this room you see wheelbarrows and picks.",
+                    "gmNotes": "On one wheelbarrow 17ep are kept under a cloth. Above two pick piles, SCUM CREEPERS await (AC8, HD1, hp7, #AT1, D1x4rounds).",
+                    "contentTags": ["encounter", "treasure"],
+                    "encounters": [
+                        {
+                            "name": "Scum creeper",
+                            "count": 1,
+                            "stats": {
+                                "armorClass": 8,
+                                "hitDice": "1",
+                                "hitPoints": [7],
+                                "attacks": 1,
+                                "damage": ["1"],
+                                "special": "x4 rounds",
+                                "text": "AC8, HD1, hp7, #AT1, D1x4rounds"
+                            },
+                            "notes": "Above two pick piles."
+                        }
+                    ],
+                    "treasure": {
+                        "coins": { "ep": 17 },
+                        "notes": "On one wheelbarrow, under a cloth."
+                    }
+                },
+                {
+                    "id": "22",
+                    "keyNumber": "22",
+                    "name": "Storerm#4",
+                    "sectionID": "storage",
+                    "location": { "x": 14.0, "y": 20.0 },
+                    "size": { "width": 2.0, "height": 3.0 },
+                    "readAloud": "There are piles of broken and unbroken rocks here.",
+                    "gmNotes": "4 STONEWADERS will push for a fight (AC2, HD1, hp5, #AT2, D2-5/2-5). 94ep are under a large rock.",
+                    "contentTags": ["encounter", "treasure"],
+                    "encounters": [
+                        {
+                            "name": "Stonewader",
+                            "count": 4,
+                            "stats": {
+                                "armorClass": 2,
+                                "hitDice": "1",
+                                "hitPoints": [5],
+                                "attacks": 2,
+                                "damage": ["d4+1", "d4+1"],
+                                "text": "AC2, HD1, hp5, #AT2, D2-5/2-5"
+                            }
+                        }
+                    ],
+                    "treasure": {
+                        "coins": { "ep": 94 },
+                        "notes": "Under a large rock."
+                    }
+                },
+                {
+                    "id": "23",
+                    "keyNumber": "23",
+                    "name": "Storerm#5",
+                    "sectionID": "storage",
+                    "location": { "x": 17.0, "y": 17.0 },
+                    "size": { "width": 2.0, "height": 2.0 },
+                    "readAloud": "Piles of long metal rods pack the room.",
+                    "gmNotes": "A BRONZE KEY OPENS ROOM 23. They are 20- to 200-lb tracks for the mine cars. 5 STONEWADERS live here (AC2, HD1, hp6, 5(x4), #AT2, D2-5/2-5) and a small sack contains 34gp, 17ep, and a gold bracelet (worth 100gp).",
+                    "contentTags": ["encounter", "treasure"],
+                    "encounters": [
+                        {
+                            "name": "Stonewader",
+                            "count": 5,
+                            "stats": {
+                                "armorClass": 2,
+                                "hitDice": "1",
+                                "hitPoints": [6, 5, 5, 5, 5],
+                                "attacks": 2,
+                                "damage": ["d4+1", "d4+1"],
+                                "text": "AC2, HD1, hp6, 5(x4), #AT2, D2-5/2-5"
+                            }
+                        }
+                    ],
+                    "treasure": {
+                        "coins": { "gp": 34, "ep": 17 },
+                        "items": [
+                            { "name": "Gold bracelet", "value": "100 gp" }
+                        ],
+                        "notes": "In a small sack."
+                    }
+                },
+                {
+                    "id": "24",
+                    "keyNumber": "24",
+                    "name": "Storerm#6",
+                    "sectionID": "storage",
+                    "location": { "x": 17.0, "y": 20.0 },
+                    "size": { "width": 2.0, "height": 2.0 },
+                    "readAloud": "Canvas sheets cover unknown objects on the floor.",
+                    "gmNotes": "THE SILVER KEY OPENS ROOM 24. Many obscure-sized metal objects litter the floor, with a huge STONEWADER (AC2, HD2, hp10, #AT2, D3-6/3-6), a manhole cover hiding the secret tunnel, and 27gp. The trap is worth 100exp.",
+                    "contentTags": ["encounter", "special", "treasure"],
+                    "encounters": [
+                        {
+                            "name": "Huge stonewader",
+                            "count": 1,
+                            "stats": {
+                                "armorClass": 2,
+                                "hitDice": "2",
+                                "hitPoints": [10],
+                                "attacks": 2,
+                                "damage": ["d4+2", "d4+2"],
+                                "text": "AC2, HD2, hp10, #AT2, D3-6/3-6"
+                            }
+                        }
+                    ],
+                    "treasure": {
+                        "coins": { "gp": 27 }
+                    },
+                    "features": [
+                        {
+                            "id": "24-manhole",
+                            "kind": "floorHatch",
+                            "name": "Manhole cover",
+                            "location": { "x": 18.5, "y": 21.5 },
+                            "gmNotes": "A manhole cover hiding the secret tunnel. The trap is worth 100exp."
+                        }
+                    ]
+                },
+                {
+                    "id": "25",
+                    "keyNumber": "25",
+                    "name": "Secret Rm#1",
+                    "sectionID": "storage",
+                    "location": { "x": 17.0, "y": 23.0 },
+                    "size": { "width": 2.0, "height": 2.0 },
+                    "readAloud": "The room is bare, except for the ladder which descends down a tunnel.",
+                    "gmNotes": "Plastered on the wall about 8’ up is a scroll message to the REEDLING princess; see SCROLL #1. By it is a hole in the wall containing: 350cp, 260sp, and 250ep.",
+                    "contentTags": ["treasure"],
+                    "features": [
+                        {
+                            "id": "25-ladder",
+                            "kind": "floorHatch",
+                            "name": "Ladder",
+                            "location": { "x": 18.5, "y": 23.5 },
+                            "gmNotes": "Descends down a tunnel."
+                        },
+                        {
+                            "id": "25-scroll",
+                            "kind": "decoration",
+                            "name": "Scroll message and hole in the wall",
+                            "location": { "x": 17.3, "y": 24.3 },
+                            "gmNotes": "Plastered on the wall about 8' up is a scroll message to the REEDLING princess; see SCROLL #1. By it is a hole in the wall.",
+                            "treasure": {
+                                "coins": { "cp": 350, "sp": 260, "ep": 250 },
+                                "items": [
+                                    { "name": "SCROLL #1: Letter from Lrrgh to Oaak" }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "26",
+                    "keyNumber": "26",
+                    "name": "Management",
+                    "sectionID": "storage",
+                    "location": { "x": 11.0, "y": 24.0 },
+                    "size": { "width": 5.0, "height": 2.0 },
+                    "labelLocation": { "x": 13.5, "y": 25.55 },
+                    "readAloud": "There are 2 stands at each end of this 50’ wide chamber. On each stand is a 1’ idol.",
+                    "gmNotes": "At 26A, the idol’s name is ‘MUGAMBI,’ and it turns itself to gold (worth 800gp). The idol at 26B has the name ‘GWTHPLK,’ and it grants a CURE LIGHT WOUNDS 2 times a day. 26C’s idol is named ‘HHHWD,’ and it turns the nearest metal object into a 10gp gem. 26D’s idol is called ‘ERRBOLK,’ and it turns the nearest character into a chicken for 2 turns. An idol works only when it hears its name and is in this room.",
+                    "contentTags": ["special", "treasure"],
+                    "features": [
+                        {
+                            "id": "26A",
+                            "kind": "idol",
+                            "name": "MUGAMBI",
+                            "location": { "x": 11.5, "y": 24.5 },
+                            "gmNotes": "It turns itself to gold (worth 800gp).",
+                            "treasure": {
+                                "items": [
+                                    { "name": "Gold idol", "value": "800 gp", "notes": "Once it has turned itself to gold." }
+                                ]
+                            }
+                        },
+                        {
+                            "id": "26B",
+                            "kind": "idol",
+                            "name": "GWTHPLK",
+                            "location": { "x": 15.5, "y": 25.5 },
+                            "gmNotes": "It grants a CURE LIGHT WOUNDS 2 times a day."
+                        },
+                        {
+                            "id": "26C",
+                            "kind": "idol",
+                            "name": "HHHWD",
+                            "location": { "x": 15.5, "y": 24.5 },
+                            "gmNotes": "It turns the nearest metal object into a 10gp gem."
+                        },
+                        {
+                            "id": "26D",
+                            "kind": "idol",
+                            "name": "ERRBOLK",
+                            "location": { "x": 11.5, "y": 25.5 },
+                            "gmNotes": "It turns the nearest character into a chicken for 2 turns."
+                        }
+                    ]
+                },
+                {
+                    "id": "27",
+                    "keyNumber": "27",
+                    "name": "Storerm#7",
+                    "sectionID": "storage",
+                    "location": { "x": 8.0, "y": 21.0 },
+                    "size": { "width": 2.0, "height": 2.0 },
+                    "readAloud": "Four large wooden carts with metal wheels fill this room.",
+                    "gmNotes": "A BRONZE KEY OPENS ROOM 27. Each cart contains a STONEWADER (AC2, HD1, hp5, #AT2, D2-5/2-5). They have 45ep in one cart, under a false bottom. One cart covers the trap door below.",
+                    "contentTags": ["encounter", "treasure"],
+                    "encounters": [
+                        {
+                            "name": "Stonewader",
+                            "count": 4,
+                            "stats": {
+                                "armorClass": 2,
+                                "hitDice": "1",
+                                "hitPoints": [5],
+                                "attacks": 2,
+                                "damage": ["d4+1", "d4+1"],
+                                "text": "AC2, HD1, hp5, #AT2, D2-5/2-5"
+                            },
+                            "notes": "One in each cart."
+                        }
+                    ],
+                    "treasure": {
+                        "coins": { "ep": 45 },
+                        "notes": "In one cart, under a false bottom."
+                    },
+                    "features": [
+                        {
+                            "id": "27-trapdoor",
+                            "kind": "floorHatch",
+                            "name": "Trap door",
+                            "location": { "x": 8.5, "y": 22.7 },
+                            "gmNotes": "One cart covers the trap door below."
+                        }
+                    ]
+                },
+                {
+                    "id": "28",
+                    "keyNumber": "28",
+                    "name": "Secret Rm#2",
+                    "sectionID": "storage",
+                    "location": { "x": 8.0, "y": 24.0 },
+                    "size": { "width": 2.0, "height": 2.0 },
+                    "readAloud": "A mound of silver pieces lies in this room.",
+                    "gmNotes": "Living with this mound are 40 BURNING COINS (AC4, HD1, hp4, #AT2, D1-3/round until washed with water). There are 785sp. Water kills the coins, heat or cold has no effect.",
+                    "contentTags": ["encounter", "hazard", "treasure"],
+                    "encounters": [
+                        {
+                            "name": "Burning coin",
+                            "count": 40,
+                            "stats": {
+                                "armorClass": 4,
+                                "hitDice": "1",
+                                "hitPoints": [4],
+                                "attacks": 2,
+                                "damage": ["d3"],
+                                "special": "per round until washed with water",
+                                "text": "AC4, HD1, hp4, #AT2, D1-3/round until washed with water"
+                            },
+                            "notes": "Water kills the coins, heat or cold has no effect."
+                        }
+                    ],
+                    "treasure": {
+                        "coins": { "sp": 785 }
+                    },
+                    "features": [
+                        {
+                            "id": "28-hatch",
+                            "kind": "floorHatch",
+                            "name": "Tunnel from 27",
+                            "location": { "x": 8.5, "y": 25.0 }
+                        }
+                    ]
+                },
+                {
+                    "id": "29",
+                    "keyNumber": "29",
+                    "name": "Storerm#8",
+                    "sectionID": "storage",
+                    "location": { "x": 8.0, "y": 17.0 },
+                    "size": { "width": 2.0, "height": 3.0 },
+                    "readAloud": "Stacks of wooden boards pile in this room.",
+                    "gmNotes": "THE GOLD KEY OPENS ROOM 29. One stack hides the tunnel. Three dead stonewaders lie here, and 18gp of their treasure remains. The trap is worth 100exp.",
+                    "contentTags": ["treasure"],
+                    "treasure": {
+                        "coins": { "gp": 18 },
+                        "notes": "Remains of the three dead stonewaders' treasure."
+                    },
+                    "features": [
+                        {
+                            "id": "29-tunnel",
+                            "kind": "ceilingHatch",
+                            "name": "Tunnel under a stack of boards",
+                            "location": { "x": 8.5, "y": 18.5 },
+                            "gmNotes": "One stack hides the tunnel. The trap is worth 100exp."
+                        }
+                    ]
+                },
+                {
+                    "id": "30",
+                    "keyNumber": "30",
+                    "name": "Guardroom#1",
+                    "sectionID": "storage",
+                    "location": { "x": 8.0, "y": 27.0 },
+                    "size": { "width": 3.0, "height": 2.0 },
+                    "readAloud": "At the far end of the room, mounds of waste launch their stench.",
+                    "gmNotes": "Save vs PARAL or throw up for 1 turn and save again… Two young GRONDELS guard this room (AC5, HD2+2, hp15, #AT3, D1-4/1-4/1-4). Each carries in his purse 2d12gp. Inside the mound is a RING of FEATHER FALLING with 145gp.",
+                    "contentTags": ["encounter", "hazard", "treasure"],
+                    "encounters": [
+                        {
+                            "name": "Young grondel",
+                            "count": 2,
+                            "stats": {
+                                "armorClass": 5,
+                                "hitDice": "2+2",
+                                "hitPoints": [15],
+                                "attacks": 3,
+                                "damage": ["d4", "d4", "d4"],
+                                "text": "AC5, HD2+2, hp15, #AT3, D1-4/1-4/1-4"
+                            },
+                            "carriedEach": {
+                                "coins": { "gp": "2d12" }
+                            }
+                        }
+                    ],
+                    "features": [
+                        {
+                            "id": "30-mound",
+                            "kind": "hazard",
+                            "name": "Mounds of waste",
+                            "location": { "x": 10.5, "y": 28.0 },
+                            "gmNotes": "Save vs PARAL or throw up for 1 turn and save again.",
+                            "treasure": {
+                                "coins": { "gp": 145 },
+                                "items": [
+                                    { "name": "RING of FEATHER FALLING", "isMagic": true }
+                                ],
+                                "notes": "Inside the mound."
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "31",
+                    "keyNumber": "31",
+                    "name": "Guardroom#2",
+                    "sectionID": "storage",
+                    "location": { "x": 16.0, "y": 27.0 },
+                    "size": { "width": 3.0, "height": 3.0 },
+                    "readAloud": "Human-sized arms in various states of decay are thrown all about this room.",
+                    "gmNotes": "Two GRONDELS guard (AC5, HD2+2, hp15, #AT3, D1-4/1-4/1-4). Each carries 4d12gp. Searching the arms requires the same save as in room 30.",
+                    "contentTags": ["encounter", "hazard"],
+                    "encounters": [
+                        {
+                            "name": "Grondel",
+                            "count": 2,
+                            "stats": {
+                                "armorClass": 5,
+                                "hitDice": "2+2",
+                                "hitPoints": [15],
+                                "attacks": 3,
+                                "damage": ["d4", "d4", "d4"],
+                                "text": "AC5, HD2+2, hp15, #AT3, D1-4/1-4/1-4"
+                            },
+                            "carriedEach": {
+                                "coins": { "gp": "4d12" }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "32",
+                    "keyNumber": "32",
+                    "name": "Tower Level 2",
+                    "sectionID": "storage",
+                    "location": { "x": 11.0, "y": 27.0 },
+                    "size": { "width": 5.0, "height": 5.0 },
+                    "shape": "ellipse",
+                    "walls": [
+                        [
+                            { "x": 13.901, "y": 28.003 },
+                            { "x": 14.275, "y": 28.158 },
+                            { "x": 14.596, "y": 28.404 },
+                            { "x": 14.842, "y": 28.725 },
+                            { "x": 14.997, "y": 29.099 },
+                            { "x": 15.05, "y": 29.5 },
+                            { "x": 14.997, "y": 29.901 },
+                            { "x": 14.842, "y": 30.275 },
+                            { "x": 14.596, "y": 30.596 },
+                            { "x": 14.275, "y": 30.842 },
+                            { "x": 13.901, "y": 30.997 }
+                        ],
+                        [
+                            { "x": 13.099, "y": 30.997 },
+                            { "x": 12.725, "y": 30.842 },
+                            { "x": 12.404, "y": 30.596 },
+                            { "x": 12.158, "y": 30.275 },
+                            { "x": 12.003, "y": 29.901 },
+                            { "x": 11.95, "y": 29.5 },
+                            { "x": 12.003, "y": 29.099 },
+                            { "x": 12.158, "y": 28.725 },
+                            { "x": 12.404, "y": 28.404 },
+                            { "x": 12.725, "y": 28.158 },
+                            { "x": 13.099, "y": 28.003 }
+                        ]
+                    ],
+                    "readAloud": "On large tables in this circular chamber there are fine glass-works. One stairway leads up, and another leads down.",
+                    "gmNotes": "A huge GRONDEL (AC5, HD4+3, hp23, #AT3, D1-4/1-4/1-4) lives here, and will whine if any glass is broken. He has d6sp, d6ep, and d20gp on him. Four glass-works are worth 100gp each.",
+                    "contentTags": ["encounter", "treasure"],
+                    "encounters": [
+                        {
+                            "name": "Huge grondel",
+                            "count": 1,
+                            "stats": {
+                                "armorClass": 5,
+                                "hitDice": "4+3",
+                                "hitPoints": [23],
+                                "attacks": 3,
+                                "damage": ["d4", "d4", "d4"],
+                                "text": "AC5, HD4+3, hp23, #AT3, D1-4/1-4/1-4"
+                            },
+                            "carried": {
+                                "coins": { "sp": "d6", "ep": "d6", "gp": "d20" }
+                            },
+                            "notes": "Will whine if any glass is broken."
+                        }
+                    ],
+                    "features": [
+                        {
+                            "id": "32-tables",
+                            "kind": "furnishing",
+                            "name": "Tables of glass-works",
+                            "location": { "x": 13.5, "y": 29.5 },
+                            "treasure": {
+                                "items": [
+                                    { "name": "Fine glass-work", "quantity": 4, "value": "100 gp" }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hallways": [
+                {
+                    "name": "Outer west corridor",
+                    "edges": [
+                        { "x": 3.0, "y": 3.0 },
+                        { "x": 6.0, "y": 3.0 },
+                        { "x": 6.0, "y": 4.0 },
+                        { "x": 4.0, "y": 4.0 },
+                        { "x": 4.0, "y": 9.0 },
+                        { "x": 8.0, "y": 9.0 },
+                        { "x": 8.0, "y": 10.0 },
+                        { "x": 4.0, "y": 10.0 },
+                        { "x": 4.0, "y": 15.0 },
+                        { "x": 6.0, "y": 15.0 },
+                        { "x": 6.0, "y": 16.0 },
+                        { "x": 3.0, "y": 16.0 }
+                    ]
+                },
+                {
+                    "name": "Livingplaces corridor",
+                    "edges": [
+                        { "x": 8.0, "y": 3.0 },
+                        { "x": 13.0, "y": 3.0 },
+                        { "x": 13.0, "y": 4.0 },
+                        { "x": 8.0, "y": 4.0 }
+                    ]
+                },
+                {
+                    "name": "Secret passage, west",
+                    "edges": [
+                        { "x": 12.0, "y": 6.0 },
+                        { "x": 13.0, "y": 6.0 },
+                        { "x": 13.0, "y": 7.0 },
+                        { "x": 12.0, "y": 7.0 }
+                    ]
+                },
+                {
+                    "name": "Secret passage, east",
+                    "edges": [
+                        { "x": 14.0, "y": 5.0 },
+                        { "x": 15.0, "y": 5.0 },
+                        { "x": 15.0, "y": 6.0 },
+                        { "x": 14.0, "y": 6.0 }
+                    ]
+                },
+                {
+                    "name": "Northeast corridor",
+                    "edges": [
+                        { "x": 18.0, "y": 5.0 },
+                        { "x": 19.0, "y": 5.0 },
+                        { "x": 19.0, "y": 9.0 },
+                        { "x": 18.0, "y": 9.0 }
+                    ]
+                },
+                {
+                    "name": "Petroom west approach",
+                    "edges": [
+                        { "x": 22.0, "y": 9.0 },
+                        { "x": 24.0, "y": 9.0 },
+                        { "x": 24.0, "y": 10.0 },
+                        { "x": 22.0, "y": 10.0 }
+                    ]
+                },
+                {
+                    "name": "Petroom south approach",
+                    "edges": [
+                        { "x": 21.0, "y": 15.0 },
+                        { "x": 22.0, "y": 15.0 },
+                        { "x": 22.0, "y": 16.0 },
+                        { "x": 21.0, "y": 16.0 }
+                    ]
+                },
+                {
+                    "name": "Hidden passage",
+                    "edges": [
+                        { "x": 20.0, "y": 13.0 },
+                        { "x": 21.0, "y": 13.0 },
+                        { "x": 21.0, "y": 16.0 },
+                        { "x": 17.0, "y": 16.0 },
+                        { "x": 17.0, "y": 15.0 },
+                        { "x": 20.0, "y": 15.0 }
+                    ]
+                },
+                {
+                    "name": "Corridor east of 14",
+                    "edges": [
+                        { "x": 8.0, "y": 15.0 },
+                        { "x": 10.0, "y": 15.0 },
+                        { "x": 10.0, "y": 16.0 },
+                        { "x": 8.0, "y": 16.0 }
+                    ]
+                },
+                {
+                    "name": "Storage corridor, north",
+                    "edges": [
+                        { "x": 10.0, "y": 16.0 },
+                        { "x": 17.0, "y": 16.0 },
+                        { "x": 17.0, "y": 17.0 },
+                        { "x": 10.0, "y": 17.0 }
+                    ]
+                },
+                {
+                    "name": "Storage corridor, west",
+                    "edges": [
+                        { "x": 10.0, "y": 17.0 },
+                        { "x": 11.0, "y": 17.0 },
+                        { "x": 11.0, "y": 23.0 },
+                        { "x": 10.0, "y": 23.0 }
+                    ]
+                },
+                {
+                    "name": "Storage corridor, east",
+                    "edges": [
+                        { "x": 16.0, "y": 17.0 },
+                        { "x": 17.0, "y": 17.0 },
+                        { "x": 17.0, "y": 23.0 },
+                        { "x": 16.0, "y": 23.0 }
+                    ]
+                },
+                {
+                    "name": "Storage corridor, south",
+                    "edges": [
+                        { "x": 10.0, "y": 23.0 },
+                        { "x": 17.0, "y": 23.0 },
+                        { "x": 17.0, "y": 24.0 },
+                        { "x": 10.0, "y": 24.0 }
+                    ]
+                },
+                {
+                    "name": "Storage inner corridor",
+                    "edges": [
+                        { "x": 13.0, "y": 17.0 },
+                        { "x": 14.0, "y": 17.0 },
+                        { "x": 14.0, "y": 19.0 },
+                        { "x": 16.0, "y": 19.0 },
+                        { "x": 16.0, "y": 20.0 },
+                        { "x": 14.0, "y": 20.0 },
+                        { "x": 14.0, "y": 23.0 },
+                        { "x": 13.0, "y": 23.0 },
+                        { "x": 13.0, "y": 21.0 },
+                        { "x": 11.0, "y": 21.0 },
+                        { "x": 11.0, "y": 20.0 },
+                        { "x": 13.0, "y": 20.0 }
+                    ]
+                },
+                {
+                    "name": "Corridor south of 25",
+                    "edges": [
+                        { "x": 16.0, "y": 24.0 },
+                        { "x": 17.0, "y": 24.0 },
+                        { "x": 17.0, "y": 25.0 },
+                        { "x": 19.0, "y": 25.0 },
+                        { "x": 19.0, "y": 26.0 },
+                        { "x": 16.0, "y": 26.0 }
+                    ]
+                },
+                {
+                    "name": "Outer east corridor",
+                    "edges": [
+                        { "x": 19.0, "y": 18.0 },
+                        { "x": 20.0, "y": 18.0 },
+                        { "x": 20.0, "y": 30.0 },
+                        { "x": 19.0, "y": 30.0 }
+                    ]
+                },
+                {
+                    "name": "Stair landing, blocked by rubble",
+                    "edges": [
+                        { "x": 16.0, "y": 26.0 },
+                        { "x": 19.0, "y": 26.0 },
+                        { "x": 19.0, "y": 27.0 },
+                        { "x": 16.0, "y": 27.0 }
+                    ]
+                },
+                {
+                    "name": "Southwest corridor",
+                    "edges": [
+                        { "x": 7.0, "y": 24.0 },
+                        { "x": 8.0, "y": 24.0 },
+                        { "x": 8.0, "y": 26.0 },
+                        { "x": 10.0, "y": 26.0 },
+                        { "x": 10.0, "y": 24.0 },
+                        { "x": 11.0, "y": 24.0 },
+                        { "x": 11.0, "y": 27.0 },
+                        { "x": 8.0, "y": 27.0 },
+                        { "x": 8.0, "y": 30.0 },
+                        { "x": 7.0, "y": 30.0 }
+                    ]
+                },
+                {
+                    "name": "Corridor south of 30",
+                    "edges": [
+                        { "x": 8.0, "y": 29.0 },
+                        { "x": 11.0, "y": 29.0 },
+                        { "x": 11.0, "y": 30.0 },
+                        { "x": 8.0, "y": 30.0 }
+                    ]
+                }
+            ],
+            "doors": [
+                {
+                    "kind": "caveEntrance",
+                    "leftEdge": { "x": 13.0, "y": 1.0 },
+                    "rightEdge": { "x": 14.0, "y": 1.0 },
+                    "name": "Cave opening"
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 13.0, "y": 8.0 },
+                    "rightEdge": { "x": 14.0, "y": 8.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 12.0, "y": 9.0 },
+                    "rightEdge": { "x": 12.0, "y": 10.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 15.0, "y": 9.0 },
+                    "rightEdge": { "x": 15.0, "y": 10.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 13.0, "y": 11.0 },
+                    "rightEdge": { "x": 14.0, "y": 11.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 14.0, "y": 5.0 },
+                    "rightEdge": { "x": 14.0, "y": 6.0 },
+                    "attributes": ["isSecret"]
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 15.0, "y": 5.0 },
+                    "rightEdge": { "x": 15.0, "y": 6.0 },
+                    "attributes": ["isSecret"]
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 13.0, "y": 6.0 },
+                    "rightEdge": { "x": 13.0, "y": 7.0 },
+                    "attributes": ["isSecret"]
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 12.0, "y": 6.0 },
+                    "rightEdge": { "x": 12.0, "y": 7.0 },
+                    "attributes": ["isSecret"]
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 8.0, "y": 9.0 },
+                    "rightEdge": { "x": 8.0, "y": 10.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 6.0, "y": 3.0 },
+                    "rightEdge": { "x": 6.0, "y": 4.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 8.0, "y": 3.0 },
+                    "rightEdge": { "x": 8.0, "y": 4.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 6.0, "y": 5.0 },
+                    "rightEdge": { "x": 7.0, "y": 5.0 }
+                },
+                {
+                    "kind": "opening",
+                    "leftEdge": { "x": 7.0, "y": 5.0 },
+                    "rightEdge": { "x": 8.0, "y": 5.0 },
+                    "name": "Archway behind the rug"
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 8.0, "y": 4.0 },
+                    "rightEdge": { "x": 9.0, "y": 4.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 9.0, "y": 4.0 },
+                    "rightEdge": { "x": 10.0, "y": 4.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 10.0, "y": 4.0 },
+                    "rightEdge": { "x": 11.0, "y": 4.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 11.0, "y": 4.0 },
+                    "rightEdge": { "x": 12.0, "y": 4.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 12.0, "y": 4.0 },
+                    "rightEdge": { "x": 13.0, "y": 4.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 6.0, "y": 15.0 },
+                    "rightEdge": { "x": 6.0, "y": 16.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 8.0, "y": 15.0 },
+                    "rightEdge": { "x": 8.0, "y": 16.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 7.0, "y": 14.0 },
+                    "rightEdge": { "x": 8.0, "y": 14.0 },
+                    "attributes": ["isLocked"],
+                    "name": "Leader's door"
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 8.0, "y": 12.0 },
+                    "rightEdge": { "x": 8.0, "y": 13.0 },
+                    "attributes": ["isSecret"]
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 10.0, "y": 15.0 },
+                    "rightEdge": { "x": 10.0, "y": 16.0 },
+                    "attributes": ["isSecret"]
+                },
+                {
+                    "kind": "opening",
+                    "leftEdge": { "x": 10.0, "y": 14.0 },
+                    "rightEdge": { "x": 11.0, "y": 14.0 }
+                },
+                {
+                    "kind": "opening",
+                    "leftEdge": { "x": 16.0, "y": 14.0 },
+                    "rightEdge": { "x": 17.0, "y": 14.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 13.0, "y": 14.0 },
+                    "rightEdge": { "x": 14.0, "y": 14.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 13.0, "y": 13.0 },
+                    "rightEdge": { "x": 14.0, "y": 13.0 },
+                    "attributes": ["isSecret"],
+                    "name": "Catch triggered by a mop or broom handle"
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 13.0, "y": 16.0 },
+                    "rightEdge": { "x": 14.0, "y": 16.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 17.0, "y": 15.0 },
+                    "rightEdge": { "x": 17.0, "y": 16.0 },
+                    "attributes": ["isSecret"]
+                },
+                {
+                    "kind": "opening",
+                    "leftEdge": { "x": 20.0, "y": 9.0 },
+                    "rightEdge": { "x": 20.0, "y": 10.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 18.0, "y": 8.0 },
+                    "rightEdge": { "x": 18.0, "y": 9.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 18.0, "y": 10.0 },
+                    "rightEdge": { "x": 18.0, "y": 11.0 }
+                },
+                {
+                    "kind": "opening",
+                    "leftEdge": { "x": 18.0, "y": 5.0 },
+                    "rightEdge": { "x": 18.0, "y": 6.0 }
+                },
+                {
+                    "kind": "opening",
+                    "leftEdge": { "x": 19.0, "y": 5.0 },
+                    "rightEdge": { "x": 19.0, "y": 6.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 19.0, "y": 7.0 },
+                    "rightEdge": { "x": 19.0, "y": 8.0 },
+                    "attributes": ["isLocked"],
+                    "keyID": "storeroom-iron-key",
+                    "name": "Storeroom door"
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 22.0, "y": 9.0 },
+                    "rightEdge": { "x": 22.0, "y": 10.0 },
+                    "attributes": ["isSecret"]
+                },
+                {
+                    "kind": "portcullis",
+                    "leftEdge": { "x": 24.0, "y": 9.0 },
+                    "rightEdge": { "x": 24.0, "y": 10.0 },
+                    "attributes": ["isLocked"],
+                    "keyID": "portcullis-bronze-key",
+                    "name": "Feeding hatch, 9A"
+                },
+                {
+                    "kind": "portcullis",
+                    "leftEdge": { "x": 24.0, "y": 11.0 },
+                    "rightEdge": { "x": 25.0, "y": 11.0 },
+                    "attributes": ["isOneWay"],
+                    "name": "Portcullis, 9A (raised by the levers)"
+                },
+                {
+                    "kind": "portcullis",
+                    "leftEdge": { "x": 24.0, "y": 14.0 },
+                    "rightEdge": { "x": 23.0, "y": 14.0 },
+                    "attributes": ["isOneWay"],
+                    "name": "Portcullis, 9B (raised by the levers)"
+                },
+                {
+                    "kind": "portcullis",
+                    "leftEdge": { "x": 22.0, "y": 15.0 },
+                    "rightEdge": { "x": 22.0, "y": 16.0 },
+                    "attributes": ["isLocked"],
+                    "keyID": "portcullis-bronze-key",
+                    "name": "Feeding hatch, 9B"
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 21.0, "y": 15.0 },
+                    "rightEdge": { "x": 21.0, "y": 16.0 },
+                    "attributes": ["isSecret"]
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 23.0, "y": 12.0 },
+                    "rightEdge": { "x": 23.0, "y": 13.0 },
+                    "attributes": ["isLocked", "isSecret"],
+                    "keyID": "brass-key",
+                    "name": "Middle secret door"
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 20.0, "y": 12.0 },
+                    "rightEdge": { "x": 20.0, "y": 13.0 },
+                    "attributes": ["isLocked"],
+                    "keyID": "watch-silver-key",
+                    "name": "Door to the chieftain's room"
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 20.0, "y": 13.0 },
+                    "rightEdge": { "x": 20.0, "y": 14.0 }
+                },
+                {
+                    "kind": "opening",
+                    "leftEdge": { "x": 10.0, "y": 17.0 },
+                    "rightEdge": { "x": 11.0, "y": 17.0 }
+                },
+                {
+                    "kind": "opening",
+                    "leftEdge": { "x": 16.0, "y": 17.0 },
+                    "rightEdge": { "x": 17.0, "y": 17.0 }
+                },
+                {
+                    "kind": "opening",
+                    "leftEdge": { "x": 10.0, "y": 23.0 },
+                    "rightEdge": { "x": 11.0, "y": 23.0 }
+                },
+                {
+                    "kind": "opening",
+                    "leftEdge": { "x": 16.0, "y": 23.0 },
+                    "rightEdge": { "x": 17.0, "y": 23.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 10.0, "y": 18.0 },
+                    "rightEdge": { "x": 10.0, "y": 19.0 },
+                    "attributes": ["isLocked"],
+                    "keyID": "store-gold-key",
+                    "name": "29"
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 10.0, "y": 21.0 },
+                    "rightEdge": { "x": 10.0, "y": 22.0 },
+                    "attributes": ["isLocked"],
+                    "keyID": "store-bronze-key",
+                    "name": "27"
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 11.0, "y": 20.0 },
+                    "rightEdge": { "x": 11.0, "y": 21.0 },
+                    "attributes": ["isLocked"],
+                    "keyID": "store-iron-key"
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 16.0, "y": 19.0 },
+                    "rightEdge": { "x": 16.0, "y": 20.0 },
+                    "attributes": ["isLocked"],
+                    "keyID": "store-iron-key"
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 13.0, "y": 18.0 },
+                    "rightEdge": { "x": 13.0, "y": 19.0 },
+                    "attributes": ["isLocked"],
+                    "keyID": "store-iron-key",
+                    "name": "20"
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 14.0, "y": 18.0 },
+                    "rightEdge": { "x": 14.0, "y": 19.0 },
+                    "attributes": ["isLocked"],
+                    "keyID": "store-iron-key",
+                    "name": "19"
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 13.0, "y": 21.0 },
+                    "rightEdge": { "x": 13.0, "y": 22.0 },
+                    "attributes": ["isLocked"],
+                    "keyID": "store-iron-key",
+                    "name": "21"
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 14.0, "y": 21.0 },
+                    "rightEdge": { "x": 14.0, "y": 22.0 },
+                    "attributes": ["isLocked"],
+                    "keyID": "store-iron-key",
+                    "name": "22"
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 17.0, "y": 18.0 },
+                    "rightEdge": { "x": 17.0, "y": 19.0 },
+                    "attributes": ["isLocked"],
+                    "keyID": "store-bronze-key",
+                    "name": "23"
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 17.0, "y": 21.0 },
+                    "rightEdge": { "x": 17.0, "y": 22.0 },
+                    "attributes": ["isLocked"],
+                    "keyID": "store-silver-key",
+                    "name": "24"
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 13.0, "y": 24.0 },
+                    "rightEdge": { "x": 14.0, "y": 24.0 }
+                },
+                {
+                    "kind": "passage",
+                    "width": 0.5,
+                    "segments": [
+                        { "x": 18.75, "y": 22.0 },
+                        { "x": 18.75, "y": 23.0 }
+                    ],
+                    "attributes": ["isSecret"],
+                    "name": "Secret tunnel between 24 and 25"
+                },
+                {
+                    "kind": "passage",
+                    "width": 0.5,
+                    "segments": [
+                        { "x": 8.75, "y": 23.0 },
+                        { "x": 8.75, "y": 24.0 }
+                    ],
+                    "attributes": ["isSecret"],
+                    "name": "Tunnel under the trap door in 27"
+                },
+                {
+                    "kind": "passage",
+                    "width": 0.5,
+                    "segments": [
+                        { "x": 8.0, "y": 18.75 },
+                        { "x": 7.5, "y": 18.75 },
+                        { "x": 7.5, "y": 24.0 }
+                    ],
+                    "attributes": ["isSecret"],
+                    "name": "Tunnel from 29"
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 18.0, "y": 25.0 },
+                    "rightEdge": { "x": 19.0, "y": 25.0 }
+                },
+                {
+                    "kind": "opening",
+                    "leftEdge": { "x": 19.0, "y": 25.0 },
+                    "rightEdge": { "x": 19.0, "y": 26.0 }
+                },
+                {
+                    "kind": "staircase",
+                    "width": 1.0,
+                    "segments": [
+                        { "x": 19.0, "y": 27.0 },
+                        { "x": 17.0, "y": 27.0 }
+                    ],
+                    "stairDirection": "down",
+                    "name": "Stairs down to a landing blocked by rubble"
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 19.0, "y": 28.0 },
+                    "rightEdge": { "x": 19.0, "y": 29.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 16.0, "y": 29.0 },
+                    "rightEdge": { "x": 16.0, "y": 30.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 11.0, "y": 29.0 },
+                    "rightEdge": { "x": 11.0, "y": 30.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 8.0, "y": 28.0 },
+                    "rightEdge": { "x": 8.0, "y": 29.0 }
+                },
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 8.0, "y": 29.0 },
+                    "rightEdge": { "x": 9.0, "y": 29.0 }
+                },
+                {
+                    "kind": "staircase",
+                    "width": 0.45,
+                    "segments": [
+                        { "x": 12.75, "y": 30.799 },
+                        { "x": 12.439, "y": 30.561 },
+                        { "x": 12.201, "y": 30.25 },
+                        { "x": 12.051, "y": 29.888 },
+                        { "x": 12.0, "y": 29.5 },
+                        { "x": 12.051, "y": 29.112 },
+                        { "x": 12.201, "y": 28.75 },
+                        { "x": 12.439, "y": 28.439 },
+                        { "x": 12.75, "y": 28.201 }
+                    ],
+                    "stairDirection": "up",
+                    "name": "Stairway up to the Tower Top",
+                    "connection": {
+                        "mapID": "tower_top",
+                        "end": { "x": 12.5, "y": 35.5 }
+                    }
+                },
+                {
+                    "kind": "staircase",
+                    "width": 0.45,
+                    "segments": [
+                        { "x": 14.25, "y": 28.201 },
+                        { "x": 14.561, "y": 28.439 },
+                        { "x": 14.799, "y": 28.75 },
+                        { "x": 14.949, "y": 29.112 },
+                        { "x": 15.0, "y": 29.5 },
+                        { "x": 14.949, "y": 29.888 },
+                        { "x": 14.799, "y": 30.25 },
+                        { "x": 14.561, "y": 30.561 },
+                        { "x": 14.25, "y": 30.799 }
+                    ],
+                    "stairDirection": "down",
+                    "name": "Stairway down to Tower Level 3 (33)",
+                    "connection": {
+                        "mapID": "tower_level_3",
+                        "end": { "x": 0.0, "y": 0.0 }
+                    }
+                }
+            ]
+        },
+        {
+            "id": "tower_top",
+            "name": "Tower Top",
+            "sections": [],
+            "rooms": [
+                {
+                    "id": "tower-top",
+                    "keyNumber": "TT",
+                    "name": "Tower Top",
+                    "location": { "x": 12.0, "y": 34.0 },
+                    "size": { "width": 3.0, "height": 3.0 },
+                    "shape": "ellipse",
+                    "readAloud": "There is much artwork done on the walls. A huge opening is above some squarely placed rocks.",
+                    "gmNotes": "Blood is on a table in the center of the rocks. Outside, 2 wheelbarrows rest with a shovel. Under the X, a huge chest holds 569gp, 492sp, 3-100gp gems, 2-200gp pcs necklaces, a 90gp ring, a RING of WARMTH, SPLINT MAIL +1, a LARGE SHIELD +1, +4 vs MISSILES, and a FLAIL +1.",
+                    "features": [
+                        {
+                            "id": "tt-table",
+                            "kind": "furnishing",
+                            "name": "Table in the center of the rocks",
+                            "location": { "x": 14.1, "y": 35.5 },
+                            "gmNotes": "Blood is on a table in the center of the rocks."
+                        }
+                    ]
+                },
+                {
+                    "id": "hilltop",
+                    "name": "Hilltop",
+                    "edges": [
+                        { "x": 12.0, "y": 33.0 },
+                        { "x": 15.0, "y": 33.0 },
+                        { "x": 17.0, "y": 34.5 },
+                        { "x": 17.3, "y": 36.0 },
+                        { "x": 16.5, "y": 38.0 },
+                        { "x": 15.0, "y": 39.0 },
+                        { "x": 12.0, "y": 39.0 },
+                        { "x": 10.8, "y": 37.5 },
+                        { "x": 10.4, "y": 36.0 },
+                        { "x": 10.6, "y": 34.5 }
+                    ],
+                    "gmNotes": "Outside, 2 wheelbarrows rest with a shovel.",
+                    "contentTags": ["treasure"],
+                    "treasure": {
+                        "items": [
+                            { "name": "Wheelbarrow", "quantity": 2 },
+                            { "name": "Shovel" }
+                        ]
+                    },
+                    "features": [
+                        {
+                            "id": "tt-x",
+                            "kind": "container",
+                            "name": "X: huge chest",
+                            "location": { "x": 13.5, "y": 37.8 },
+                            "gmNotes": "Under the X, a huge chest.",
+                            "treasure": {
+                                "coins": { "gp": 569, "sp": 492 },
+                                "items": [
+                                    { "name": "Gem", "quantity": 3, "value": "100 gp" },
+                                    { "name": "Necklace", "quantity": 2, "value": "200 gp" },
+                                    { "name": "Ring", "value": "90 gp" },
+                                    { "name": "RING of WARMTH", "isMagic": true },
+                                    { "name": "SPLINT MAIL +1", "isMagic": true },
+                                    { "name": "LARGE SHIELD +1, +4 vs MISSILES", "isMagic": true },
+                                    { "name": "FLAIL +1", "isMagic": true }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hallways": [],
+            "doors": [
+                {
+                    "kind": "door",
+                    "leftEdge": { "x": 13.0, "y": 34.0 },
+                    "rightEdge": { "x": 14.0, "y": 34.0 }
+                },
+                {
+                    "kind": "staircase",
+                    "width": 0.35,
+                    "segments": [
+                        { "x": 12.697, "y": 36.647 },
+                        { "x": 12.428, "y": 36.4 },
+                        { "x": 12.231, "y": 36.092 },
+                        { "x": 12.121, "y": 35.743 },
+                        { "x": 12.105, "y": 35.378 },
+                        { "x": 12.184, "y": 35.021 },
+                        { "x": 12.353, "y": 34.697 },
+                        { "x": 12.6, "y": 34.428 }
+                    ],
+                    "name": "Stairway down to Tower Level 2 (32)",
+                    "connection": {
+                        "mapID": "first_level",
+                        "end": { "x": 12.0, "y": 29.5 }
+                    },
+                    "stairDirection": "down"
+                }
+            ]
+        }
+    ]
+}

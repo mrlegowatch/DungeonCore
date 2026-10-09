@@ -1,0 +1,24 @@
+{
+  "originHash" : "80d056e79222e9e977621536ef26bc2e5e08c5fc5a9e94bbfd1b16942121858b",
+  "pins" : [
+    {
+      "identity" : "roleplayingcore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mrlegowatch/RolePlayingCore.git",
+      "state" : {
+        "revision" : "1dc9ad47ff0d049f9c9d1d37f76fa2ca732e3bb3",
+        "version" : "0.1.0"
+      }
+    },
+    {
+      "identity" : "swiftdice",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mrlegowatch/SwiftDice.git",
+      "state" : {
+        "revision" : "6a08edc2dfba33154cbfdd1f21789580fe257ffa",
+        "version" : "0.1.0"
+      }
+    }
+  ],
+  "version" : 3
+}

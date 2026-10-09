@@ -1,0 +1,294 @@
+{
+    "id": "00003",
+    "name": "New Door Types Examples",
+    "maps": [
+        {
+            "name": "Various Door Types",
+            "id": "various_door_types",
+            "rooms": [
+                {
+                    "id": "r1",
+                    "location": { "x": 2.0, "y": 2.0 },
+                    "size": { "width": 4.0, "height": 4.0 }
+                },
+                {
+                    "id": "r2",
+                    "location": { "x": 8.0, "y": 2.0 },
+                    "size": { "width": 4.0, "height": 4.0 }
+                },
+                {
+                    "id": "r3",
+                    "location": { "x": 14.0, "y": 2.0 },
+                    "size": { "width": 4.0, "height": 4.0 }
+                },
+                {
+                    "id": "r4",
+                    "location": { "x": 2.0, "y": 8.0 },
+                    "size": { "width": 4.0, "height": 4.0 }
+                },
+                {
+                    "id": "r5",
+                    "location": { "x": 7.0, "y": 8.0 },
+                    "size": { "width": 5.0, "height": 5.0 }
+                },
+                {
+                    "id": "r6",
+                    "location": { "x": 13.0, "y": 8.0 },
+                    "size": { "width": 6.0, "height": 6.0 }
+                }
+            ],
+            "hallways": [
+                {
+                    "segments": [
+                        { "x": 6.0, "y": 4.0 },
+                        { "x": 8.0, "y": 4.0 }
+                    ]
+                },
+                {
+                    "segments": [
+                        { "x": 12.0, "y": 4.0 },
+                        { "x": 14.0, "y": 4.0 }
+                    ]
+                },
+                {
+                    "segments": [
+                        { "x": 4.0, "y": 6.0 },
+                        { "x": 4.0, "y": 8.0 }
+                    ]
+                },
+                {
+                    "segments": [
+                        { "x": 6.0, "y": 9.0 },
+                        { "x": 7.0, "y": 9.0 }
+                    ]
+                },
+                {
+                    "segments": [
+                        { "x": 12.0, "y": 9.0 },
+                        { "x": 13.0, "y": 9.0 }
+                    ]
+                },
+            ],
+            "doors": [
+                {
+                    "leftEdge": { "x": 6.0, "y": 4.0 },
+                    "rightEdge": { "x": 6.0, "y": 5.0 },
+                    "kind": "opening"
+                },
+                {
+                    "leftEdge": { "x": 4.0, "y": 6.0 },
+                    "rightEdge": { "x": 3.0, "y": 6.0 },
+                    "kind": "door"
+                },
+                {
+                    "leftEdge": { "x": 8.0, "y": 4.0 },
+                    "rightEdge": { "x": 8.0, "y": 5.0 },
+                    "kind": "portcullis"
+                },
+                {
+                    "leftEdge": { "x": 12, "y": 4.0 },
+                    "rightEdge": { "x": 12.0, "y": 5.0 },
+                    "kind": "slidingDoor"
+                },
+                {
+                    "leftEdge": { "x": 14.0, "y": 4.0 },
+                    "rightEdge": { "x": 14.0, "y": 5.0 },
+                    "kind": "ladder"
+                },
+                {
+                    "leftEdge": { "x": 3.0, "y": 8.0 },
+                    "rightEdge": { "x": 4.0, "y": 8.0 },
+                    "kind": "opening"
+                },
+                {
+                    "leftEdge": { "x": 6.0, "y": 9.0 },
+                    "rightEdge": { "x": 6.0, "y": 10.0 },
+                    "kind": "opening"
+                },
+                {
+                    "leftEdge": { "x": 7.0, "y": 10.0 },
+                    "rightEdge": { "x": 7.0, "y": 9.0 },
+                    "kind": "door",
+                    "attributes": ["isOneWay"]
+                },
+                {
+                    "leftEdge": { "x": 9.0, "y": 8.0 },
+                    "rightEdge": { "x": 10.0, "y": 8.0 },
+                    "kind": "door",
+                    "attributes": ["isOneWay"]
+                },
+                {
+                    "leftEdge": { "x": 12.0, "y": 9.0 },
+                    "rightEdge": { "x": 12.0, "y": 10.0 },
+                    "kind": "door",
+                    "attributes": ["isOneWay"]
+                },
+                {
+                    "leftEdge": { "x": 10.0, "y": 13.0 },
+                    "rightEdge": { "x": 9.0, "y": 13.0 },
+                    "kind": "door",
+                    "attributes": ["isOneWay"]
+                }
+            ]
+        },
+        {
+            "name": "Special Area-Based Doors",
+            "id": "special_area_doors",
+            "rooms": [
+                {
+                    "id": "r1",
+                    "location": { "x": 2.0, "y": 2.0 },
+                    "size": { "width": 6.0, "height": 6.0 }
+                },
+                {
+                    "id": "r2",
+                    "location": { "x": 10.0, "y": 2.0 },
+                    "size": { "width": 6.0, "height": 6.0 }
+                },
+                {
+                    "id": "r3",
+                    "location": { "x": 2.0, "y": 10.0 },
+                    "size": { "width": 6.0, "height": 6.0 }
+                },
+                {
+                    "id": "r4",
+                    "location": { "x": 10.0, "y": 10.0 },
+                    "size": { "width": 6.0, "height": 6.0 }
+                }
+            ],
+            "hallways": [],
+            "doors": [
+                {
+                    "location": { "x": 4.0, "y": 5.0 },
+                    "size": { "width": 2.0, "height": 2.0 },
+                    "kind": "trapDoor",
+                    "width": 1.0
+                },
+                {
+                    "location": { "x": 11.0, "y": 2.0 },
+                    "size": { "width": 4.0, "height": 2.0 },
+                    "kind": "elevator",
+                    "width": 2.0
+                }
+            ]
+        },
+        {
+            "name": "Staircases",
+            "id": "staircase_examples",
+            "rooms": [
+                {
+                    "id": "r1",
+                    "location": { "x": 2.0, "y": 2.0 },
+                    "size": { "width": 8.0, "height": 10.0 }
+                },
+                {
+                    "id": "r2",
+                    "location": { "x": 12.0, "y": 2.0 },
+                    "size": { "width": 10.0, "height": 10.0 }
+                },
+                {
+                    "id": "r3",
+                    "location": { "x": 24.0, "y": 2.0 },
+                    "size": { "width": 10.0, "height": 10.0 }
+                }
+            ],
+            "hallways": [],
+            "doors": [
+                {
+                    "kind": "staircase",
+                    "width": 1.0,
+                    "segments": [
+                        { "x": 4.0, "y": 4.0 },
+                        { "x": 4.0, "y": 9.0 }
+                    ]
+                },
+                {
+                    "kind": "staircase",
+                    "width": 1.0,
+                    "segments": [
+                        { "x": 15.0, "y": 4.0 },
+                        { "x": 15.0, "y": 7.0 },
+                        { "x": 18.0, "y": 7.0 },
+                        { "x": 18.0, "y": 10.0 }
+                    ]
+                },
+                {
+                    "kind": "staircase",
+                    "width": 1.0,
+                    "edges": [
+                        { "x": 27.0, "y": 4.0 },
+                        { "x": 27.0, "y": 6.0 },
+                        { "x": 30.0, "y": 6.0 },
+                        { "x": 30.0, "y": 10.0 },
+                        { "x": 28.0, "y": 10.0 },
+                        { "x": 28.0, "y": 8.0 },
+                        { "x": 25.0, "y": 8.0 },
+                        { "x": 25.0, "y": 4.0 }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Passages",
+            "id": "passage_examples",
+            "rooms": [
+                {
+                    "id": "r1",
+                    "location": { "x": 2.0, "y": 2.0 },
+                    "size": { "width": 5.0, "height": 5.0 }
+                },
+                {
+                    "id": "r2",
+                    "location": { "x": 10.0, "y": 2.0 },
+                    "size": { "width": 5.0, "height": 5.0 }
+                },
+                {
+                    "id": "r3",
+                    "location": { "x": 2.0, "y": 10.0 },
+                    "size": { "width": 5.0, "height": 5.0 }
+                },
+                {
+                    "id": "r4",
+                    "location": { "x": 18.0, "y": 2.0 },
+                    "size": { "width": 5.0, "height": 5.0 }
+                },
+                {
+                    "id": "r5",
+                    "location": { "x": 18.0, "y": 12.0 },
+                    "size": { "width": 5.0, "height": 5.0 }
+                }
+            ],
+            "hallways": [],
+            "doors": [
+                {
+                    "kind": "passage",
+                    "width": 1.0,
+                    "segments": [
+                        { "x": 7.0, "y": 4.0 },
+                        { "x": 10.0, "y": 4.0 }
+                    ]
+                },
+                {
+                    "kind": "passage",
+                    "width": 1.0,
+                    "segments": [
+                        { "x": 4.0, "y": 7.0 },
+                        { "x": 4.0, "y": 10.0 }
+                    ]
+                },
+                {
+                    "kind": "passage",
+                    "width": 1.0,
+                    "edges": [
+                        { "x": 20.0, "y": 7.0 },
+                        { "x": 20.0, "y": 9.0 },
+                        { "x": 17.0, "y": 9.0 },
+                        { "x": 17.0, "y": 11.0 },
+                        { "x": 20.0, "y": 11.0 },
+                        { "x": 20.0, "y": 12.0 }
+                    ]
+                }
+            ]
+        }
+    ]
+}

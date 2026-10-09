@@ -1,0 +1,195 @@
+{
+    "id": "00002",
+    "name": "Sample Map",
+    "maps": [
+        {
+            "name": "Sample Map",
+            "id": "sample_map",
+            "sections": [
+                { "id": "gatehouse", "name": "Gatehouse" },
+                { "id": "warrens", "name": "Goblin Warrens" }
+            ],
+            "rooms": [
+                {
+                    "id": "1",
+                    "location": { "x": 0.0, "y": 0.0 },
+                    "size": { "width": 2.0, "height": 3.0 },
+                    "keyNumber": "1",
+                    "readAloud": "A bare guardroom. An overturned stool lies in the corner.",
+                    "gmNotes": "The guards have fled.",
+                    "contentTags": ["empty"],
+                    "sectionID": "gatehouse",
+                    "occupancy": {
+                        "chance": { "die": "d6", "atMost": 1, "per": "turn" },
+                        "notes": "A goblin patrol from room 2."
+                    }
+                },
+                {
+                    "id": "2",
+                    "location": { "x": 2.0, "y": 2.0 },
+                    "size": { "width": 4.0, "height": 7.0 },
+                    "keyNumber": "2",
+                    "sectionID": "warrens",
+                    "readAloud": "Three goblins crouch around a small fire, dicing for a sack of stolen coins. A locked chest sits against the far wall.",
+                    "contentTags": ["encounter", "treasure"],
+                    "encounters": [
+                        {
+                            "name": "Goblin",
+                            "count": 3,
+                            "alignment": "Chaotic Evil",
+                            "stats": { "armorClass": 13, "hitPoints": [7], "attacks": 1, "damage": ["1d6+2"], "special": "ATK +4", "text": "AC 13, HP 7, ATK +4, DMG 1d6+2" },
+                            "carried": {
+                                "items": [
+                                    { "name": "Guardroom key", "keyID": "guard-key" }
+                                ]
+                            }
+                        }
+                    ],
+                    "features": [
+                        {
+                            "id": "2-chest",
+                            "kind": "container",
+                            "name": "Locked chest",
+                            "location": { "x": 5.5, "y": 8.5 },
+                            "gmNotes": "Chest is locked (DC 12 Thieves' Tools).",
+                            "treasure": {
+                                "coins": { "gp": 40, "sp": 15 }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "3",
+                    "location": { "x": 1.0, "y": 9.0 },
+                    "size": { "width": 6.0, "height": 3.0 },
+                    "keyNumber": "3",
+                    "gmNotes": "A pressure plate near the south door triggers a falling-block trap.",
+                    "contentTags": ["trap"],
+                    "sectionID": "gatehouse",
+                    "features": [
+                        {
+                            "id": "3-plate",
+                            "kind": "trap",
+                            "name": "Pressure plate",
+                            "location": { "x": 3.5, "y": 11.5 }
+                        }
+                    ]
+                },
+                {
+                    "id": "4",
+                    "location": { "x": 10.0, "y": 1.0 },
+                    "size": { "width": 4.0, "height": 4.0 },
+                    "keyNumber": "4",
+                    "readAloud": "The walls are carved with strange runes that glow faintly blue. The air hums with latent power.",
+                    "contentTags": ["special"]
+                },
+                {
+                    "id": "5",
+                    "location": { "x": 3.0, "y": 13.0 },
+                    "size": { "width": 7.0, "height": 5.0 },
+                    "keyNumber": "5",
+                    "sectionID": "warrens",
+                    "readAloud": "A hobgoblin war-chief holds court in this chamber, flanked by two veteran guards. Sacks of plunder are piled in the corner.",
+                    "contentTags": ["encounter", "treasure"],
+                    "encounters": [
+                        {
+                            "name": "Hobgoblin War-Chief",
+                            "count": 1,
+                            "alignment": "Lawful Evil",
+                            "stats": { "armorClass": 16, "hitPoints": [52], "attacks": 1, "damage": ["1d8+2"], "special": "chain mail + shield; ATK +4", "text": "AC 16 (chain mail + shield), HP 52, ATK +4, DMG 1d8+2" }
+                        },
+                        {
+                            "name": "Hobgoblin Guard",
+                            "count": 2,
+                            "alignment": "Lawful Evil"
+                        }
+                    ],
+                    "features": [
+                        {
+                            "id": "5-throne",
+                            "kind": "furnishing",
+                            "name": "Throne",
+                            "location": { "x": 9.0, "y": 15.5 },
+                            "treasure": {
+                                "coins": { "gp": 120, "sp": 45, "cp": 200 },
+                                "items": [ { "name": "Potion of Healing" } ],
+                                "notes": "Coins in a burlap sack under the chief's throne"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hallways": [
+                {
+                    "segments": [
+                        { "x": 6.0, "y": 4.0 },
+                        { "x": 8.0, "y": 4.0 },
+                        { "x": 8.0, "y": 2.0 },
+                        { "x": 10.0, "y": 2.0 }
+                    ]
+                },
+                {
+                    "segments": [
+                        { "x": 12.0, "y": 5.0 },
+                        { "x": 12.0, "y": 6.0 },
+                        { "x": 14.0, "y": 6.0 },
+                        { "x": 14.0, "y": 11.0 },
+                        { "x": 7.0, "y": 11.0 }
+                    ]
+                },
+                {
+                    "segments": [
+                        { "x": 2.0, "y": 12.0 },
+                        { "x": 2.0, "y": 14.0 },
+                        { "x": 3.0, "y": 14.0 }
+                    ]
+                }
+            ],
+            "doors": [
+                {
+                    "leftEdge": { "x": 2.0, "y": 2.0 },
+                    "rightEdge": { "x": 2.0, "y": 3.0 },
+                    "kind": "door",
+                    "attributes": ["isLocked"],
+                    "keyID": "guard-key"
+                },
+                {
+                    "leftEdge": { "x": 3.0, "y": 9.0 },
+                    "rightEdge": { "x": 4.0, "y": 9.0 },
+                    "kind": "opening"
+                },
+                {
+                    "leftEdge": { "x": 6.0, "y": 4.0 },
+                    "rightEdge": { "x": 6.0, "y": 5.0 },
+                    "kind": "door",
+                    "attributes": ["isLocked", "hasTrap"]
+                },
+                {
+                    "leftEdge": { "x": 10.0, "y": 2.0 },
+                    "rightEdge": { "x": 10.0, "y": 3.0 },
+                    "kind": "opening"
+                },
+                {
+                    "leftEdge": { "x": 11.0, "y": 5.0 },
+                    "rightEdge": { "x": 12.0, "y": 5.0 },
+                    "kind": "door"
+                },
+                {
+                    "leftEdge": { "x": 7.0, "y": 10.0 },
+                    "rightEdge": { "x": 7.0, "y": 11.0 },
+                    "kind": "door"
+                },
+                {
+                    "leftEdge": { "x": 1.0, "y": 12.0 },
+                    "rightEdge": { "x": 2.0, "y": 12.0 },
+                    "kind": "opening"
+                },
+                {
+                    "leftEdge": { "x": 3.0, "y": 14.0 },
+                    "rightEdge": { "x": 3.0, "y": 15.0 },
+                    "kind": "opening"
+                }
+            ]
+        }
+    ]
+}
