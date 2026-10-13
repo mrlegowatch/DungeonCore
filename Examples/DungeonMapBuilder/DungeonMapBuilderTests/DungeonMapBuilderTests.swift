@@ -8,6 +8,7 @@
 @testable import DungeonMapBuilder
 import Testing
 import DungeonCore
+import SwiftDice
 import CoreGraphics
 
 @MainActor
@@ -333,6 +334,48 @@ struct LabelPlacementTests {
             labelSize: labelSize, inset: inset, obstacles: obstacles, contains: rectContains
         )
         #expect(rect == CGRect(x: 0.5, y: 0.5, width: 2, height: 1))
+    }
+}
+
+struct RoomDetailViewTests {
+
+    private func makeRoom() -> DungeonRoom {
+        DungeonRoom(location: MapPoint(x: 0, y: 0), size: MapSize(width: 5, height: 5))
+    }
+
+    @Test func hasStructuredRoomContentIsFalseWithNoStructuredContent() {
+        let room = makeRoom()
+        #expect(!room.hasStructuredRoomContent)
+    }
+
+    @Test func hasStructuredRoomContentIsTrueWithFeatures() {
+        let room = makeRoom()
+        room.features = [RoomFeature(id: "1-trap", kind: .trap, location: MapPoint(x: 1, y: 1))]
+        #expect(room.hasStructuredRoomContent)
+    }
+
+    @Test func hasStructuredRoomContentIsTrueWithEncounters() {
+        let room = makeRoom()
+        room.encounters = [RoomEncounter(name: "Goblin")]
+        #expect(room.hasStructuredRoomContent)
+    }
+
+    @Test func hasStructuredRoomContentIsTrueWithNonEmptyTreasure() {
+        let room = makeRoom()
+        room.treasure = Treasure(items: [TreasureItem(name: "Potion of Healing")])
+        #expect(room.hasStructuredRoomContent)
+    }
+
+    @Test func hasStructuredRoomContentIsFalseWithEmptyTreasure() {
+        let room = makeRoom()
+        room.treasure = Treasure()
+        #expect(!room.hasStructuredRoomContent)
+    }
+
+    @Test func hasStructuredRoomContentIsTrueWithOccupancy() {
+        let room = makeRoom()
+        room.occupancy = Occupancy(chance: Chance(die: 1, atMost: 1))
+        #expect(room.hasStructuredRoomContent)
     }
 }
 
