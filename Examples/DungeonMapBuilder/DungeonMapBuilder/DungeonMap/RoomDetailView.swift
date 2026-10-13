@@ -23,8 +23,17 @@ struct RoomDetailView: View {
 
     @Environment(\.dismiss) private var dismiss
     @State private var isEditingRoom = false
+    @State private var isGMNotesExpanded: Bool
     @State private var occupancyOutcome: Occupancy.Outcome?
     @State private var occupancyRollDescription: String?
+
+    init(room: DungeonRoom, roomIndex: Int, viewModel: DungeonMapViewModel? = nil, onDelete: (() -> Void)? = nil) {
+        self.room = room
+        self.roomIndex = roomIndex
+        self.viewModel = viewModel
+        self.onDelete = onDelete
+        _isGMNotesExpanded = State(initialValue: !room.hasStructuredRoomContent)
+    }
 
     var body: some View {
         NavigationStack {
@@ -116,11 +125,12 @@ struct RoomDetailView: View {
                     }
                 }
                 if let gmNotes {
-                    VStack(alignment: .leading, spacing: 4) {
+                    DisclosureGroup(isExpanded: $isGMNotesExpanded) {
+                        Text(gmNotes)
+                    } label: {
                         Text("GM notes")
                             .font(.caption)
                             .foregroundStyle(.secondary)
-                        Text(gmNotes)
                     }
                 }
             }
@@ -318,6 +328,14 @@ struct RoomDetailView: View {
 
 private func coinOrder(_ symbol: String) -> Int {
     ["pp", "gp", "ep", "sp", "cp"].firstIndex(of: symbol) ?? 99
+}
+
+extension DungeonRoom {
+    /// Whether this room has Features, Encounters, Treasure, or Occupancy content, i.e. the
+    /// structured sections below `RoomDetailView`'s description that would duplicate GM notes.
+    var hasStructuredRoomContent: Bool {
+        !features.isEmpty || !encounters.isEmpty || treasure?.isEmpty == false || occupancy != nil
+    }
 }
 
 // MARK: - Sub-views
