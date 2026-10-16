@@ -430,6 +430,34 @@
                     "kind": "opening"
                 }
             ]
+        },
+        {
+            "name": "Acute Angle Hallways by segments",
+            "id": "acute_angle_hallways_segments",
+            "rooms": [
+                {
+                    "id": "r1",
+                    "location": { "x": 5.0, "y": 5.0 },
+                    "size": { "width": 5.0, "height": 5.0 }
+                }
+            ],
+            "hallways": [
+                {
+                    "segments": [
+                        { "x": 7.0, "y": 5.0 },
+                        { "x": 7.0, "y": 2.0 },
+                        { "x": 4.0, "y": 5.0 },
+                        { "x": 2.0, "y": 5.0 },
+                    ]
+                },
+            ],
+            "doors": [
+                {
+                    "leftEdge": { "x": 7.0, "y": 5.0 },
+                    "rightEdge": { "x": 8.0, "y": 5.0 },
+                    "kind": "opening"
+                }
+            ]
         }
     ]
 }
